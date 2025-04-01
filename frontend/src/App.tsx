@@ -5,6 +5,10 @@ import DocsPage from "@/pages/Docs";
 import PricingPage from "@/pages/Pricing";
 import BlogPage from "@/pages/Blog";
 import AboutPage from "@/pages/About";
+import Profile from "@/pages/Profile";
+import GalleryPage from "@/pages/Gallery";
+import CreatePostPage from "@/pages/CreatePost";
+
 
 function App() {
   return (
@@ -14,6 +18,9 @@ function App() {
       <Route element={<PricingPage />} path="/pricing" />
       <Route element={<BlogPage />} path="/blog" />
       <Route element={<AboutPage />} path="/about" />
+      <Route element={<Profile />} path="/profile" />
+      <Route element={<GalleryPage />} path="/gallery" />
+      <Route element={<CreatePostPage />} path="/post" />
     </Routes>
   );
 }
