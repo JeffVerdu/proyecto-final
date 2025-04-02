@@ -1,6 +1,5 @@
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/Default";
-import {Button} from "@heroui/react";
 
 
 export default function DocsPage() {
