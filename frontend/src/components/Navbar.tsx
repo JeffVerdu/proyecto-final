@@ -13,9 +13,8 @@ import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/Theme-switch";
-import { GithubIcon, SearchIcon } from "@/components/Icons";
 import { Button } from "@heroui/button";
+import { SearchIcon } from "./Icons";
 
 export const Navbar = () => {
   const searchInput = (
@@ -35,7 +34,12 @@ export const Navbar = () => {
   );
 
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
+    <HeroUINavbar
+      maxWidth="xl"
+      position="sticky"
+      shouldHideOnScroll
+      className="bg-transparent"
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
           <Link
@@ -43,7 +47,9 @@ export const Navbar = () => {
             color="foreground"
             href="/"
           >
-            <p className="font-bold text-inherit">Fast MarketPlace</p>
+            <p className="font-bold text-inherit text-white">
+              Fast<strong>MarketPlace</strong>
+            </p>
           </Link>
         </NavbarBrand>
         <div className="hidden lg:flex gap-4 justify-start ml-2">
@@ -52,7 +58,7 @@ export const Navbar = () => {
               <Link
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium"
+                  "data-[active=true]:text-primary data-[active=true]:font-medium text-white font-medium"
                 )}
                 color="foreground"
                 href={item.href}
@@ -68,19 +74,19 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="center"
       >
-        <NavbarItem className="hidden sm:flex gap-2">
-          <ThemeSwitch />
-        </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        <Button className="">Iniciar Sesión</Button>
-        <Link className="cursor-pointer">Registrarse</Link>
+        <Button className="bg-[#8AB2A6] text-white font-semibold">
+          Iniciar Sesión
+        </Button>
+        <Link className="cursor-pointer text-white font-semibold">
+          Registrarse
+        </Link>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
 
