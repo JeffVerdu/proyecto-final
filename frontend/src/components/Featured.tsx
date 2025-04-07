@@ -63,7 +63,7 @@ const Featured = () => {
   return (
     <section className="relative z-20 -mt-24">
       <div className="overflow-x-auto">
-        <div className="flex gap-4 snap-x snap-mandatory mx-auto max-w-7xl py-5 px-4">
+        <div className="flex snap-x snap-mandatory mx-auto max-w-7xl py-5 justify-between">
           {featuredPosts.map((post) => (
             <div
               key={post.id}

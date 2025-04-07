@@ -15,8 +15,13 @@ import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 import { Button } from "@heroui/button";
 import { SearchIcon } from "./Icons";
+import { useLocation } from "react-router-dom";
 
 export const Navbar = () => {
+  const location = useLocation();
+
+  const isDetailsPage = location.pathname.includes("/producto/");
+
   const searchInput = (
     <Input
       aria-label="Search"
@@ -38,7 +43,7 @@ export const Navbar = () => {
       maxWidth="xl"
       position="sticky"
       shouldHideOnScroll
-      className="bg-transparent"
+      className={`${isDetailsPage ? "bg-[#3E3F5B]" : "bg-transparent"}`}
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
@@ -48,7 +53,12 @@ export const Navbar = () => {
             href="/"
           >
             <p className="font-bold text-inherit text-white">
-              Fast<strong>MarketPlace</strong>
+              Fast
+              <strong
+                className={`${isDetailsPage ? "text-white" : "text-[#3E3F5B]"}`}
+              >
+                MarketPlace
+              </strong>
             </p>
           </Link>
         </NavbarBrand>
@@ -78,7 +88,7 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        <Button className="bg-[#8AB2A6] text-white font-semibold">
+        <Button className="bg-[#FFFFFF] text-[#3E3F5B] font-semibold">
           Iniciar Sesión
         </Button>
         <Link className="cursor-pointer text-white font-semibold">
