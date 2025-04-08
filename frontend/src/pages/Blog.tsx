@@ -8,9 +8,6 @@ export default function DocsPage() {
         <div className="inline-block max-w-lg text-center justify-center">
           <h1 className={title()}>Blog</h1>
         </div>
-        <div className="flex gap-4 items-center">
-
-        </div>
       </section>
     </DefaultLayout>
   );
