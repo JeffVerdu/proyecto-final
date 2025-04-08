@@ -1,0 +1,12 @@
+2025-04-08T01:53:43.973Z ::1 GET /api/auth/login 401 - undefined ms user:anonymous - agent:curl/8.12.1 body:{"email":"sandy2@example.com","password":"******"}
+2025-04-08T01:59:31.309Z - ✅ Conexión a la base de datos establecida
+2025-04-08T01:59:31.316Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-08T01:59:38.171Z ::1 GET /api/auth/login 401 - 1181.753 ms user:anonymous - agent:curl/8.12.1 body:{"email":"sandy2@example.com","password":"******"}
+2025-04-08T01:59:52.577Z ::1 GET /api/auth/login 200 - 1527.698 ms user:anonymous - agent:curl/8.12.1 body:{"email":"sandy@example.com","password":"******"}
+2025-04-08T02:00:53.219Z ::1 POST /api/productos 201 - 1312.646 ms user:1 - agent:curl/8.12.1 body:{"nombre":"PlayStation 6","descripcion":"Consola nueva","imagenes":["img3.jpg","img4.jpg"],"precio":1999.99,"condicion":"nuevo","ubicacion":"Santiago"}
+2025-04-08T02:00:59.707Z ::1 GET /api/productos 200 - 144.108 ms user:anonymous - agent:curl/8.12.1 body:{}
+2025-04-08T02:02:00.549Z - ✅ Conexión a la base de datos establecida
+2025-04-08T02:02:00.560Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-08T02:02:14.420Z - ✅ Conexión a la base de datos establecida
+2025-04-08T02:02:14.424Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-08T02:02:21.462Z - 🛑 Servidor detenido manualmente
