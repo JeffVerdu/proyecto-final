@@ -12,9 +12,9 @@ const ProductCategoryCarousel: React.FC<Props> = ({ category, products }) => {
     <section className="p-4 max-w-7xl mx-auto mb-8 last:mb-0 bg-white rounded-lg shadow-md">
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-bold">{category}</h2>
-        <a href="#" className="text-sm text-blue-600 font-medium">
+        <button className="text-sm text-blue-600 font-medium" onClick={() => {/* Add action here */}}>
           Ver más
-        </a>
+        </button>
       </div>
       <div className="overflow-x-auto">
         <div className="flex gap-4 snap-x snap-mandatory py-4 px-8">
