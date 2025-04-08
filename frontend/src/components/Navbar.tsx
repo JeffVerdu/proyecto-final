@@ -88,12 +88,8 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        <Button className="bg-[#FFFFFF] text-[#3E3F5B] font-semibold">
-          Iniciar Sesión
-        </Button>
-        <Link className="cursor-pointer text-white font-semibold">
-          Registrarse
-        </Link>
+       <Link href="/login"> <Button className="bg-[#FFFFFF] text-[#3E3F5B] font-semibold">Iniciar Sesión</Button></Link>
+        <Link href="/register" className="cursor-pointer text-white font-semibold">Registrarse</Link>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
