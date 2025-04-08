@@ -75,8 +75,8 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        <Button className="">Iniciar Sesión</Button>
-        <Link className="cursor-pointer">Registrarse</Link>
+       <Link href= "/login"> <Button className="">Iniciar Sesión</Button></Link>
+        <Link href= "/register" className="cursor-pointer">Registrarse</Link>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
