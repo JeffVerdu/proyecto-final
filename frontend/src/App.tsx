@@ -23,7 +23,7 @@ function App() {
       <Route element={<Register />} path="/register" />
       <Route element={<Profile />} path="/profile" />
       <Route element={<GalleryPage />} path="/gallery" />
-      <Route element={<CreatePostPage />} path="/post" /
+      <Route element={<CreatePostPage />} path="/post" />
     </Routes>
   );
 }
