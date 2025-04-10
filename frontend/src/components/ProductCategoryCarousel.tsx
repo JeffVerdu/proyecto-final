@@ -9,10 +9,15 @@ interface Props {
 
 const ProductCategoryCarousel: React.FC<Props> = ({ category, products }) => {
   return (
-    <section className="p-4 max-w-7xl mx-auto mb-8 last:mb-0 bg-white rounded-lg shadow-md">
+    <section className="p-4 max-w-7xl mx-auto mb-8 last:mb-0 bg-white rounded-xl shadow-md">
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-bold">{category}</h2>
-        <button className="text-sm text-blue-600 font-medium" onClick={() => {/* Add action here */}}>
+        <button
+          className="text-sm text-blue-600 font-medium"
+          onClick={() => {
+            /* Add action here */
+          }}
+        >
           Ver más
         </button>
       </div>

@@ -20,7 +20,8 @@ import { useLocation } from "react-router-dom";
 export const Navbar = () => {
   const location = useLocation();
 
-  const isDetailsPage = location.pathname.includes("/producto/");
+  const isNavbarTransparent =
+    location.pathname === "/" || location.pathname === "/category";
 
   const searchInput = (
     <Input
@@ -43,7 +44,7 @@ export const Navbar = () => {
       maxWidth="xl"
       position="sticky"
       shouldHideOnScroll
-      className={`${isDetailsPage ? "bg-[#3E3F5B]" : "bg-transparent"}`}
+      className={`${isNavbarTransparent ? "bg-transparent" : "bg-[#3E3F5B]"}`}
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
@@ -55,7 +56,7 @@ export const Navbar = () => {
             <p className="font-bold text-inherit text-white">
               Fast
               <strong
-                className={`${isDetailsPage ? "text-white" : "text-[#3E3F5B]"}`}
+                className={`${isNavbarTransparent ? "text-[#3E3F5B]" : "text-white"}`}
               >
                 MarketPlace
               </strong>
@@ -88,8 +89,18 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
-       <Link href="/login"> <Button className="bg-[#FFFFFF] text-[#3E3F5B] font-semibold">Iniciar Sesión</Button></Link>
-        <Link href="/register" className="cursor-pointer text-white font-semibold">Registrarse</Link>
+        <Link href="/login">
+          {" "}
+          <Button className="bg-white text-[#3E3F5B] font-semibold">
+            Iniciar Sesión
+          </Button>
+        </Link>
+        <Link
+          href="/register"
+          className="cursor-pointer text-white font-semibold"
+        >
+          Registrarse
+        </Link>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">

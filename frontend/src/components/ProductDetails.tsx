@@ -65,7 +65,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
 
         <p className="text-red-600 font-semibold">¡Última disponible!</p>
 
-        <button className="bg-[#8AB2A6] text-white font-bold py-3 rounded-md transition shadow-sm">
+        <button className="bg-[#8AB2A6] hover:brightness-95 text-white font-bold py-3 rounded-md transition shadow-sm">
           Comprar ahora
         </button>
 

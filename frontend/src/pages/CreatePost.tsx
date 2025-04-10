@@ -1,11 +1,19 @@
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import DefaultLayout from "@/layouts/Default"
-import { DollarSign, Phone, Mail, MapPin, ImageIcon, X, Info } from "lucide-react"
+import { useState } from "react";
+import DefaultLayout from "@/layouts/Default";
+import {
+  DollarSign,
+  Phone,
+  Mail,
+  MapPin,
+  ImageIcon,
+  X,
+  Info,
+} from "lucide-react";
 
 export default function CreatePostPage() {
-  const [activeTab, setActiveTab] = useState("form")
+  const [activeTab, setActiveTab] = useState("form");
   const [formData, setFormData] = useState({
     title: "",
     price: "",
@@ -15,50 +23,63 @@ export default function CreatePostPage() {
     location: "",
     contactPhone: "",
     contactEmail: "",
-  })
-  const [images, setImages] = useState<(string | null)[]>([null, null, null, null, null])
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  });
+  const [images, setImages] = useState<(string | null)[]>([
+    null,
+    null,
+    null,
+    null,
+    null,
+  ]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
-    const file = e.target.files?.[0]
+  const handleImageChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
+    const file = e.target.files?.[0];
     if (file) {
-      const reader = new FileReader()
+      const reader = new FileReader();
       reader.onloadend = () => {
-        const newImages = [...images]
-        newImages[index] = reader.result as string
-        setImages(newImages)
-      }
-      reader.readAsDataURL(file)
+        const newImages = [...images];
+        newImages[index] = reader.result as string;
+        setImages(newImages);
+      };
+      reader.readAsDataURL(file);
     }
-  }
+  };
 
   const removeImage = (index: number) => {
-    const newImages = [...images]
-    newImages[index] = null
-    setImages(newImages)
-  }
+    const newImages = [...images];
+    newImages[index] = null;
+    setImages(newImages);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate API call
     setTimeout(() => {
-      setIsSubmitting(false)
-      alert("Publicación creada exitosamente")
-    }, 1500)
-  }
+      setIsSubmitting(false);
+      alert("Publicación creada exitosamente");
+    }, 1500);
+  };
 
   return (
     <DefaultLayout>
       <div className="bg-[#F6F1DE] dark:bg-[#3E3F5B] min-h-screen rounded-3xl">
         <main className="max-w-7xl mx-auto py-8 px-4 sm:px-6">
-          <h1 className="text-2xl sm:text-3xl font-bold text-center text-[#3E3F5B] dark:text-[#F6F1DE] mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold text-center dark:text-[#F6F1DE] mb-8">
             Crear nueva publicación de venta
           </h1>
 
@@ -68,8 +89,8 @@ export default function CreatePostPage() {
               onClick={() => setActiveTab("form")}
               className={`py-3 px-6 font-medium text-lg rounded-t-2xl ${
                 activeTab === "form"
-                  ? "bg-white dark:bg-[#3E3F5B]/70 text-[#3E3F5B] dark:text-[#F6F1DE] border-t border-l border-r border-[#8AB2A6]/30"
-                  : "text-[#8AB2A6] hover:text-[#3E3F5B] dark:hover:text-[#F6F1DE]"
+                  ? "bg-white dark:bg-[#3E3F5B]/70 dark:text-[#F6F1DE] border-t border-l border-r border-[#8AB2A6]/30"
+                  : "hover:text-[#3E3F5B] dark:hover:text-[#F6F1DE]"
               }`}
             >
               Formulario
@@ -78,8 +99,8 @@ export default function CreatePostPage() {
               onClick={() => setActiveTab("preview")}
               className={`py-3 px-6 font-medium text-lg rounded-t-2xl ${
                 activeTab === "preview"
-                  ? "bg-white dark:bg-[#3E3F5B]/70 text-[#3E3F5B] dark:text-[#F6F1DE] border-t border-l border-r border-[#8AB2A6]/30"
-                  : "text-[#8AB2A6] hover:text-[#3E3F5B] dark:hover:text-[#F6F1DE]"
+                  ? "bg-white dark:bg-[#3E3F5B]/70 dark:text-[#F6F1DE] border-t border-l border-r border-[#8AB2A6]/30"
+                  : "hover:text-[#3E3F5B] dark:hover:text-[#F6F1DE]"
               }`}
             >
               Vista Previa
@@ -87,11 +108,17 @@ export default function CreatePostPage() {
           </div>
 
           {activeTab === "form" ? (
-            <form onSubmit={handleSubmit} className="bg-white dark:bg-[#3E3F5B]/70 rounded-2xl shadow-md p-6">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white dark:bg-[#3E3F5B]/70 rounded-2xl shadow-md p-6"
+            >
               <div className="space-y-8">
                 {/* Título */}
                 <div>
-                  <label htmlFor="title" className="block text-lg font-medium text-[#3E3F5B] dark:text-[#F6F1DE] mb-2">
+                  <label
+                    htmlFor="title"
+                    className="block text-lg font-medium text-[#3E3F5B] dark:text-[#F6F1DE] mb-2"
+                  >
                     Título de la publicación
                   </label>
                   <input
@@ -103,7 +130,9 @@ export default function CreatePostPage() {
                     className="w-full px-4 py-3 bg-white dark:bg-[#3E3F5B]/50 border border-[#8AB2A6] rounded-xl shadow-sm focus:ring-[#ACD3A8] focus:border-[#ACD3A8] text-[#3E3F5B] dark:text-[#F6F1DE]"
                     required
                   />
-                  <p className="mt-1 text-sm text-[#8AB2A6]">Un título claro y conciso que describa tu producto.</p>
+                  <p className="mt-1 text-sm text-[#8AB2A6]">
+                    Un título claro y conciso que describa tu producto.
+                  </p>
                 </div>
 
                 {/* Descripción */}
@@ -280,7 +309,9 @@ export default function CreatePostPage() {
                   <label className="block text-lg font-medium text-[#3E3F5B] dark:text-[#F6F1DE] mb-2">
                     Fotografías
                   </label>
-                  <p className="mb-3 text-sm text-[#8AB2A6]">Sube hasta 5 imágenes. La primera será la principal.</p>
+                  <p className="mb-3 text-sm text-[#8AB2A6]">
+                    Sube hasta 5 imágenes. La primera será la principal.
+                  </p>
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                     {images.map((image, index) => (
@@ -312,7 +343,11 @@ export default function CreatePostPage() {
                               onChange={(e) => handleImageChange(e, index)}
                             />
                             <ImageIcon className="h-8 w-8 text-[#8AB2A6]" />
-                            {index === 0 && <span className="mt-1 text-xs text-[#8AB2A6] text-center">Principal</span>}
+                            {index === 0 && (
+                              <span className="mt-1 text-xs text-[#8AB2A6] text-center">
+                                Principal
+                              </span>
+                            )}
                           </label>
                         )}
                       </div>
@@ -331,7 +366,7 @@ export default function CreatePostPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="py-3 px-6 border border-transparent rounded-xl shadow-sm text-[#3E3F5B] bg-[#ACD3A8] hover:bg-[#8AB2A6] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ACD3A8] font-medium transition-colors"
+                  className="py-3 px-6 border border-transparent rounded-xl shadow-sm bg-[#ACD3A8] hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ACD3A8] font-medium transition-all ease-in duration-200"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center">
@@ -365,7 +400,9 @@ export default function CreatePostPage() {
             </form>
           ) : (
             <div className="bg-white dark:bg-[#3E3F5B]/70 rounded-2xl shadow-md p-6">
-              {formData.title || formData.description || images.some((img) => img !== null) ? (
+              {formData.title ||
+              formData.description ||
+              images.some((img) => img !== null) ? (
                 <div className="space-y-6">
                   <div className="border-b border-[#8AB2A6]/30 pb-4">
                     <h2 className="text-2xl font-bold text-[#3E3F5B] dark:text-[#F6F1DE]">
@@ -408,7 +445,7 @@ export default function CreatePostPage() {
                                   className="w-full h-full object-cover rounded-xl"
                                 />
                               </div>
-                            ),
+                            )
                         )}
                       </div>
                     </div>
@@ -416,25 +453,34 @@ export default function CreatePostPage() {
 
                   {/* Descripción */}
                   <div>
-                    <h3 className="text-lg font-semibold text-[#3E3F5B] dark:text-[#F6F1DE] mb-2">Descripción</h3>
+                    <h3 className="text-lg font-semibold text-[#3E3F5B] dark:text-[#F6F1DE] mb-2">
+                      Descripción
+                    </h3>
                     <p className="text-[#3E3F5B] dark:text-[#F6F1DE] whitespace-pre-line">
-                      {formData.description || "Aquí aparecerá la descripción de tu producto."}
+                      {formData.description ||
+                        "Aquí aparecerá la descripción de tu producto."}
                     </p>
                   </div>
 
                   {/* Detalles */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <h3 className="text-lg font-semibold text-[#3E3F5B] dark:text-[#F6F1DE] mb-2">Detalles</h3>
+                      <h3 className="text-lg font-semibold text-[#3E3F5B] dark:text-[#F6F1DE] mb-2">
+                        Detalles
+                      </h3>
                       <ul className="space-y-2">
                         <li className="flex items-start">
-                          <span className="text-[#8AB2A6] font-medium mr-2">Categoría:</span>
+                          <span className="text-[#8AB2A6] font-medium mr-2">
+                            Categoría:
+                          </span>
                           <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">
                             {formData.category || "No especificada"}
                           </span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-[#8AB2A6] font-medium mr-2">Condición:</span>
+                          <span className="text-[#8AB2A6] font-medium mr-2">
+                            Condición:
+                          </span>
                           <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">
                             {formData.condition === "new"
                               ? "Nuevo"
@@ -453,18 +499,24 @@ export default function CreatePostPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold text-[#3E3F5B] dark:text-[#F6F1DE] mb-2">Contacto</h3>
+                      <h3 className="text-lg font-semibold text-[#3E3F5B] dark:text-[#F6F1DE] mb-2">
+                        Contacto
+                      </h3>
                       <ul className="space-y-2">
                         {formData.contactPhone && (
                           <li className="flex items-center">
                             <Phone className="h-4 w-4 text-[#8AB2A6] mr-2" />
-                            <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">{formData.contactPhone}</span>
+                            <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">
+                              {formData.contactPhone}
+                            </span>
                           </li>
                         )}
                         {formData.contactEmail && (
                           <li className="flex items-center">
                             <Mail className="h-4 w-4 text-[#8AB2A6] mr-2" />
-                            <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">{formData.contactEmail}</span>
+                            <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">
+                              {formData.contactEmail}
+                            </span>
                           </li>
                         )}
                       </ul>
@@ -478,7 +530,8 @@ export default function CreatePostPage() {
                     Vista previa no disponible
                   </h3>
                   <p className="text-[#8AB2A6] max-w-md mx-auto">
-                    Complete el formulario para ver una vista previa de cómo se verá su publicación.
+                    Complete el formulario para ver una vista previa de cómo se
+                    verá su publicación.
                   </p>
                 </div>
               )}
@@ -487,6 +540,5 @@ export default function CreatePostPage() {
         </main>
       </div>
     </DefaultLayout>
-  )
+  );
 }
-

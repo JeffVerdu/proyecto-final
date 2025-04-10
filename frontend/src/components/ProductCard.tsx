@@ -21,7 +21,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <Link to={`/producto/${product.id}`}>
         <div
           key={product.id}
-          className="w-56 h-[300px] shrink-0 bg-gray-200 rounded-lg shadow shadow-black p-4 snap-start hover:scale-105 hover:cursor-pointer transition-transform duration-300 ease-in-out flex flex-col justify-between"
+          className="w-56 h-[300px] shrink-0 bg-gray-100 rounded-xl shadow shadow-black p-4 snap-start hover:scale-105 hover:cursor-pointer transition-transform duration-300 ease-in-out flex flex-col justify-between"
         >
           <div>
             <img

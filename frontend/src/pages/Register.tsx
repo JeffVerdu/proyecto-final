@@ -24,7 +24,9 @@ export default function Register() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validatePassword(form.password)) {
-      alert("La contraseña debe tener entre 6 y 12 caracteres, incluir al menos una mayúscula y una minúscula.");
+      alert(
+        "La contraseña debe tener entre 6 y 12 caracteres, incluir al menos una mayúscula y una minúscula."
+      );
       return;
     }
     if (form.password !== form.confirmPassword) {
@@ -36,8 +38,8 @@ export default function Register() {
 
   return (
     <DefaultLayout>
-      <div className="flex items-center justify-center min-h-screen bg-[#F6F1DE]">
-        <div className="w-full max-w-md p-6 bg-[#ACD3A8] rounded-lg shadow-md">
+      <div className="flex items-start justify-center min-h-screen bg-[#F6F1DE]">
+        <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
           <h2 className="text-2xl font-bold text-center mb-6">Registrarse</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
@@ -85,10 +87,18 @@ export default function Register() {
               onChange={handleChange}
               required
             />
-            <Button type="submit" className="w-full bg-[#8AB2A6]">Registrarse</Button>
+            <Button
+              type="submit"
+              className="w-full bg-[#3E3F5B] text-white font-bold"
+            >
+              Registrarse
+            </Button>
           </form>
           <p className="text-center mt-4">
-            ¿Ya tienes una cuenta? <Link href="/login" className="text-primary">Inicia sesión</Link>
+            ¿Ya tienes una cuenta?{" "}
+            <Link href="/login" className="text-primary">
+              Inicia sesión
+            </Link>
           </p>
         </div>
       </div>
