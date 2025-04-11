@@ -4,17 +4,40 @@ import { Link } from "@heroui/link";
 import DefaultLayout from "@/layouts/Default";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import api from "@/config/axios";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Email:", email, "Password:", password);
-    navigate("/gallery");
+    setLoading(true);
+
+    try {
+      const response = await api.post("/auth/login", {
+        email,
+        password,
+      });
+
+      const { token } = response.data;
+
+      if (!token) throw new Error("Token no recibido desde el servidor");
+
+      localStorage.setItem("token", token);
+
+      alert("Inicio de sesión exitoso");
+      navigate("/profile");
+    } catch (error: any) {
+      console.error("Error al iniciar sesión:", error);
+      localStorage.removeItem("token");
+      alert(error.response?.data?.message || "Credenciales incorrectas.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -44,8 +67,9 @@ export default function Login() {
             <Button
               type="submit"
               className="w-full bg-[#3E3F5B] text-white font-bold"
+              disabled={loading}
             >
-              Ingresar
+              {loading ? "Ingresando..." : "Ingresar"}
             </Button>
           </form>
           <p className="text-center mt-4">
