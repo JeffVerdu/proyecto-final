@@ -3,6 +3,8 @@ import { Input } from "@heroui/input";
 import { Link } from "@heroui/link";
 import DefaultLayout from "@/layouts/Default";
 import { useState } from "react";
+import api from "@/config/axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [form, setForm] = useState({
@@ -13,6 +15,8 @@ export default function Register() {
     confirmPassword: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -21,19 +25,38 @@ export default function Register() {
     return /^(?=.*[a-z])(?=.*[A-Z]).{6,12}$/.test(password);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!validatePassword(form.password)) {
       alert(
         "La contraseña debe tener entre 6 y 12 caracteres, incluir al menos una mayúscula y una minúscula."
       );
       return;
     }
+
     if (form.password !== form.confirmPassword) {
       alert("Las contraseñas no coinciden.");
       return;
     }
-    console.log("Registro exitoso:", form);
+
+    try {
+      const response = await api.post("/auth/register", {
+        nombre: `${form.firstName} ${form.lastName}`,
+        email: form.email,
+        password: form.password,
+        perfil: "usuario",
+      });
+
+      const { token } = response.data;
+      localStorage.setItem("token", token);
+
+      alert("Registro exitoso");
+      navigate("/profile");
+    } catch (error: any) {
+      console.error("Error en el registro:", error);
+      alert(error.response?.data?.error || "Error al registrar usuario.");
+    }
   };
 
   return (

@@ -6,8 +6,8 @@ interface Props {
 }
 
 const ProductDetails: React.FC<Props> = ({ product }) => {
-  const [mainImage, setMainImage] = useState(product.image);
-  const thumbnails = product.gallery || [product.image];
+  const thumbnails = Array.isArray(product.imagenes) ? product.imagenes : [];
+  const [mainImage, setMainImage] = useState(thumbnails[0]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-5 gap-6">
@@ -32,7 +32,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
         <div className="flex-1 flex items-center justify-center">
           <img
             src={mainImage}
-            alt={product.title}
+            alt={product.nombre}
             className="w-full h-auto max-h-[500px] object-contain rounded"
           />
         </div>
@@ -40,30 +40,24 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
 
       {/* Card: Info del producto */}
       <div className="md:col-span-2 bg-white rounded-lg shadow p-6 flex flex-col gap-4">
-        <p className="text-sm text-gray-500">Nuevo</p>
+        <p className="text-sm text-gray-500 capitalize">{product.condicion}</p>
         <h1 className="text-2xl font-semibold leading-tight">
-          {product.title}
+          {product.nombre}
         </h1>
 
         <div>
           <p className="text-3xl font-bold text-gray-900">
-            ${product.price.toLocaleString()}
+            ${product.precio.toLocaleString()}
           </p>
-          {product.installments && (
-            <p className="text-sm text-gray-600">{product.installments}</p>
-          )}
         </div>
 
-        {product.shipping && (
-          <p className="text-green-600 font-medium">{product.shipping}</p>
-        )}
-        <p className="text-sm text-gray-600">
-          Entrega a acordar con el vendedor
-          <br />
-          Ciudad Ejemplo, País
+        <p className="text-gray-600 text-sm whitespace-pre-line">
+          {product.descripcion}
         </p>
 
-        <p className="text-red-600 font-semibold">¡Última disponible!</p>
+        <p className="text-sm text-gray-600">
+          Ubicación: {product.ubicacion}
+        </p>
 
         <button className="bg-[#8AB2A6] hover:brightness-95 text-white font-bold py-3 rounded-md transition shadow-sm">
           Comprar ahora
@@ -71,9 +65,9 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
 
         <div className="text-xs text-gray-600 mt-2">
           Vendido por{" "}
-          <span className="text-blue-600 font-semibold">Tienda Ejemplo</span>
-          <br />
-          +500 ventas
+          <span className="text-blue-600 font-semibold">
+            {product.nombre_usuario}
+          </span>
         </div>
 
         <p className="text-xs text-gray-500">

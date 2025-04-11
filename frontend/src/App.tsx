@@ -13,9 +13,12 @@ import GalleryPage from "@/pages/Gallery";
 import CreatePostPage from "@/pages/CreatePost";
 import CategoryPage from "./pages/CategoryPage";
 
+import ProtectedRoute from "@/config/ProtectedRoute";
+
 function App() {
   return (
     <Routes>
+      {/* Públicas */}
       <Route element={<IndexPage />} path="/" />
       <Route element={<DocsPage />} path="/docs" />
       <Route element={<PricingPage />} path="/pricing" />
@@ -24,10 +27,33 @@ function App() {
       <Route path="/producto/:id" element={<ProductPage />} />
       <Route element={<Login />} path="/login" />
       <Route element={<Register />} path="/register" />
-      <Route element={<Profile />} path="/profile" />
-      <Route element={<GalleryPage />} path="/gallery" />
-      <Route element={<CreatePostPage />} path="/post" />
       <Route element={<CategoryPage />} path="/category" />
+
+      {/* Protegidas */}
+      <Route
+        path="/profile"
+        element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/gallery"
+        element={
+          <ProtectedRoute>
+            <GalleryPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/post"
+        element={
+          <ProtectedRoute>
+            <CreatePostPage />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 }

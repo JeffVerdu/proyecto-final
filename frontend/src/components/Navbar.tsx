@@ -1,3 +1,4 @@
+// Navbar.tsx
 import { Link } from "@heroui/link";
 import { Input } from "@heroui/input";
 import {
@@ -16,12 +17,15 @@ import { siteConfig } from "@/config/site";
 import { Button } from "@heroui/button";
 import { SearchIcon } from "./Icons";
 import { useLocation } from "react-router-dom";
+import LogoutButton from "@/components/LogoutButton";
 
 export const Navbar = () => {
   const location = useLocation();
 
   const isNavbarTransparent =
     location.pathname === "/" || location.pathname === "/category";
+
+  const isLoggedIn = !!localStorage.getItem("token");
 
   const searchInput = (
     <Input
@@ -56,7 +60,9 @@ export const Navbar = () => {
             <p className="font-bold text-inherit text-white">
               Fast
               <strong
-                className={`${isNavbarTransparent ? "text-[#3E3F5B]" : "text-white"}`}
+                className={`${
+                  isNavbarTransparent ? "text-[#3E3F5B]" : "text-white"
+                }`}
               >
                 MarketPlace
               </strong>
@@ -88,20 +94,31 @@ export const Navbar = () => {
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        <Link href="/login">
-          {" "}
-          <Button className="bg-white text-[#3E3F5B] font-semibold">
-            Iniciar Sesión
-          </Button>
-        </Link>
-        <Link
-          href="/register"
-          className="cursor-pointer text-white font-semibold"
-        >
-          Registrarse
-        </Link>
-      </NavbarContent>
+      {/* Opciones según si el usuario está logueado */}
+      {isLoggedIn ? (
+        <NavbarContent className="hidden sm:flex gap-4" justify="end">
+          <Link href="/profile">
+            <Button className="bg-white text-[#3E3F5B] font-semibold">
+              Mi Perfil
+            </Button>
+          </Link>
+          <LogoutButton />
+        </NavbarContent>
+      ) : (
+        <NavbarContent className="hidden sm:flex gap-4" justify="end">
+          <Link href="/login">
+            <Button className="bg-white text-[#3E3F5B] font-semibold">
+              Iniciar Sesión
+            </Button>
+          </Link>
+          <Link
+            href="/register"
+            className="cursor-pointer text-white font-semibold"
+          >
+            Registrarse
+          </Link>
+        </NavbarContent>
+      )}
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
         <NavbarMenuToggle />
@@ -117,10 +134,10 @@ export const Navbar = () => {
                   index === 2
                     ? "primary"
                     : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
+                    ? "danger"
+                    : "foreground"
                 }
-                href="#"
+                href={item.href}
                 size="lg"
               >
                 {item.label}

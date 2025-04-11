@@ -1,7 +1,8 @@
 import type React from "react";
-
 import { useState } from "react";
 import DefaultLayout from "@/layouts/Default";
+import api from "@/config/axios";
+import { useNavigate } from "react-router-dom";
 import {
   DollarSign,
   Phone,
@@ -13,6 +14,7 @@ import {
 } from "lucide-react";
 
 export default function CreatePostPage() {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("form");
   const [formData, setFormData] = useState({
     title: "",
@@ -64,17 +66,45 @@ export default function CreatePostPage() {
     setImages(newImages);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("No estás autenticado.");
       setIsSubmitting(false);
-      alert("Publicación creada exitosamente");
-    }, 1500);
-  };
+      return;
+    }
 
+    const validImages = images.filter((img) => img !== null);
+
+    try {
+      const body = {
+        nombre: formData.title,
+        descripcion: formData.description,
+        imagenes: validImages,
+        precio: formData.price,
+        condicion: formData.condition,
+        ubicacion: formData.location,
+      };
+    
+      const response = await api.post("/productos", body, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+    
+      const id = response.data.id;
+      alert("Publicación creada exitosamente");
+      setIsSubmitting(false);
+      navigate(`/producto/${id}`); // sin espacio al final
+    } catch (error: any) {
+      console.error("Error al crear publicación:", error);
+      alert(error.response?.data?.error || "Error al crear publicación.");
+      setIsSubmitting(false);
+    }
+  }
   return (
     <DefaultLayout>
       <div className="bg-[#F6F1DE] dark:bg-[#3E3F5B] min-h-screen rounded-3xl">

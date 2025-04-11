@@ -1,8 +1,59 @@
-import { title } from "@/components/primitives"
-import DefaultLayout from "@/layouts/Default"
-import { UserCircle, Mail, MapPin, Calendar, Briefcase, LinkIcon } from "lucide-react"
+import { useEffect, useState } from "react";
+import api from "@/config/axios";
+import { title } from "@/components/primitives";
+import DefaultLayout from "@/layouts/Default";
+import { UserCircle, Mail, MapPin, Calendar, Briefcase, LinkIcon } from "lucide-react";
+import LogoutButton from "@/components/LogoutButton";
+import { Link } from "react-router-dom";
 
 export default function ProfilePage() {
+  const [user, setUser] = useState<any>(null);
+  const [misProductos, setMisProductos] = useState<Producto[]>([]);
+
+  type Producto = {
+    id: number;
+    nombre: string;
+    imagenes: string;
+    precio: number;
+  };
+  
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await api.get("/auth/me");
+        setUser(response.data);
+
+        const productosRes = await api.get(`/productos/usuario/${response.data.id}`);
+        setMisProductos(productosRes.data);
+  
+      } catch (error) {
+        console.error("Error al obtener el perfil:", error);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+  const getImagenPrincipal = (imagenes: any): string => {
+    try {
+      if (typeof imagenes === "string" && imagenes.trim().startsWith("[")) {
+        const parsed = JSON.parse(imagenes);
+        return Array.isArray(parsed) && parsed[0] ? parsed[0] : "/placeholder.svg";
+      }
+  
+      if (Array.isArray(imagenes)) {
+        return imagenes[0] || "/placeholder.svg";
+      }
+  
+      return imagenes || "/placeholder.svg";
+    } catch (e) {
+      console.warn("Error parseando imágenes:", e);
+      return "/placeholder.svg";
+    }
+  };
+  
+  
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center py-8 md:py-1">
@@ -21,12 +72,16 @@ export default function ProfilePage() {
               </div>
 
               <div className="mt-16">
-                <h2 className="text-2xl font-bold text-[#3E3F5B] dark:text-[#F6F1DE]">Jane Doe</h2>
+                <h2 className="text-2xl font-bold text-[#3E3F5B] dark:text-[#F6F1DE]">
+                  {user ? user.nombre : "Cargando..."}
+                </h2>
 
                 <div className="mt-6 space-y-4">
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-[#ACD3A8] dark:text-[#ACD3A8]" />
-                    <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">jane.doe@example.com</span>
+                    <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">
+                      {user ? user.email : "Cargando..."}
+                    </span>
                   </div>
 
                   <div className="flex items-center gap-3">
@@ -41,7 +96,9 @@ export default function ProfilePage() {
 
                   <div className="flex items-center gap-3">
                     <Briefcase className="h-5 w-5 text-[#ACD3A8] dark:text-[#ACD3A8]" />
-                    <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">TechCorp Inc.</span>
+                    <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">
+                      {user ? user.perfil : "Cargando..."}
+                    </span>
                   </div>
 
                   <div className="flex items-center gap-3">
@@ -53,25 +110,41 @@ export default function ProfilePage() {
                 </div>
 
                 <div className="mt-8">
-                  <h3 className="text-lg font-semibold text-[#3E3F5B] dark:text-[#F6F1DE] mb-2">About</h3>
-                  <p className="text-[#8AB2A6] dark:text-[#8AB2A6]">
-                    Frontend developer with 5 years of experience specializing in React and Next.js. Passionate about
-                    creating accessible and performant web applications with beautiful user interfaces.
-                  </p>
-                </div>
-
-                <div className="mt-6">
-                  <h3 className="text-lg font-semibold text-[#3E3F5B] dark:text-[#F6F1DE] mb-2">Skills</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {["React", "Next.js", "TypeScript", "Tailwind CSS", "UI/UX", "Responsive Design"].map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1 rounded-full text-sm bg-[#ACD3A8]/20 dark:bg-[#ACD3A8]/20 text-[#3E3F5B] dark:text-[#F6F1DE]"
+                  <h3 className="text-lg font-semibold text-[#3E3F5B] dark:text-[#F6F1DE] mb-4">
+                    Mis Publicaciones
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    {misProductos.map((prod) => (
+                      <Link
+                        key={prod.id}
+                        to={`/producto/${prod.id}`}
+                        className="border rounded-xl p-4 bg-white hover:shadow-md transition"
                       >
-                        {skill}
-                      </span>
+                        <img
+                          src={getImagenPrincipal(prod.imagenes)}
+                          alt={prod.nombre}
+                          className="w-full h-40 object-cover rounded mb-2"
+                        />
+                        <h4 className="font-bold text-[#3E3F5B] dark:text-[#F6F1DE]">{prod.nombre}</h4>
+                        <p className="text-sm text-[#8AB2A6]">${prod.precio}</p>
+                      </Link>
                     ))}
                   </div>
+                </div>
+
+                {/* ➕ Botón Crear publicación */}
+                <div className="mt-10 flex justify-center">
+                  <Link
+                    to="/post"
+                    className="px-6 py-3 rounded-xl bg-[#ACD3A8] text-[#3E3F5B] font-semibold shadow hover:brightness-95 transition"
+                  >
+                    Crear publicación
+                  </Link>
+                </div>
+
+                {/* 🔐 Botón de Cerrar Sesión */}
+                <div className="mt-10 flex justify-center">
+                  <LogoutButton />
                 </div>
               </div>
             </div>
@@ -79,6 +152,5 @@ export default function ProfilePage() {
         </div>
       </section>
     </DefaultLayout>
-  )
+  );
 }
-
