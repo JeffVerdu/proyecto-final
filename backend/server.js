@@ -9,8 +9,12 @@ const pool = require('./config/db');
 const app = express();
 
 // Middlewares
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: "http://localhost:5173",
+}));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
 
 // Logging: consola + archivo
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'logs/access.log'), { flags: 'a' });
@@ -74,6 +78,8 @@ app.use((req, res, next) => {
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/productos', require('./routes/productRoutes'));
 app.use('/api/carrito', require('./routes/cartRoutes'));
+app.use('/api/logs', require('./routes/logRoutes'));
+
 
 app.get('/health', async (req, res) => {
   try {
