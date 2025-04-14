@@ -88,23 +88,23 @@ export default function CreatePostPage() {
         condicion: formData.condition,
         ubicacion: formData.location,
       };
-    
+
       const response = await api.post("/productos", body, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-    
+
       const id = response.data.id;
       alert("Publicación creada exitosamente");
       setIsSubmitting(false);
-      navigate(`/producto/${id}`); // sin espacio al final
+      navigate(`/producto/${id}`);
     } catch (error: any) {
       console.error("Error al crear publicación:", error);
       alert(error.response?.data?.error || "Error al crear publicación.");
       setIsSubmitting(false);
     }
-  }
+  };
   return (
     <DefaultLayout>
       <div className="bg-[#F6F1DE] dark:bg-[#3E3F5B] min-h-screen rounded-3xl">
