@@ -96,12 +96,16 @@ const config: Config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      textShadow: {
+        sm: "1px 1px 2px rgba(0, 0, 0, 0.5)",
+        DEFAULT: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+        lg: "3px 3px 6px rgba(0, 0, 0, 0.5)",
+      },
     },
   },
-  plugins: [heroui()],
+  plugins: [heroui(), require("tailwindcss-textshadow")],
 };
 
 export default config;
 export const { theme } = config;
-export const { colors } = config.theme;
-
+export const { colors } = config;

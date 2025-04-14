@@ -3,5 +3,25 @@
     "id": 1,
     "title": "Deportes",
     "img": "https://altoquedeportes.com.ar/wp-content/uploads/2020/08/columnista-marceloducart-20200823.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Tecnología",
+    "img": "https://geektime.es/wp-content/uploads/2020/12/mavic-air_flame-red_-1-e1542646586211.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Hogar",
+    "img": "https://www.sustentartv.com/wp-content/uploads/posts/Productos_de_Limpieza_para_el_hogar_no_mezclar.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Moda",
+    "img": "https://audaces.com/wp-content/uploads/2022/11/que-es-mix-productos-moda.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Electrodomésticos",
+    "img": "https://negociosdeargentina.com.ar/wp-content/uploads/2025/02/Electrodomesticos1-scaled.webp"
   }
 ]

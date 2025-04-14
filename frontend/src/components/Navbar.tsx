@@ -1,4 +1,3 @@
-// Navbar.tsx
 import { Link } from "@heroui/link";
 import { Input } from "@heroui/input";
 import {
@@ -10,17 +9,32 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@heroui/navbar";
-import { link as linkStyles } from "@heroui/theme";
-import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
 import { Button } from "@heroui/button";
 import { SearchIcon } from "./Icons";
 import { useLocation } from "react-router-dom";
 import LogoutButton from "@/components/LogoutButton";
+import DropdownButton from "./DropdownButton";
+import { useEffect, useState } from "react";
 
 export const Navbar = () => {
+  const [options, setOptions] = useState([]);
   const location = useLocation();
+
+  useEffect(() => {
+    fetch("/data/categories.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const categories = data.map(
+          (category: { id: number; title: string; img: string }) =>
+            category.title
+        );
+        setOptions(categories);
+        console.log("Categories fetched:", categories);
+      })
+      .catch((error) => console.error("Error fetching categories:", error));
+  }, []);
 
   const isNavbarTransparent =
     location.pathname === "/" || location.pathname === "/category";
@@ -69,21 +83,20 @@ export const Navbar = () => {
             </p>
           </Link>
         </NavbarBrand>
-        <div className="hidden lg:flex gap-4 justify-start ml-2">
+        <div className="hidden md:flex gap-2 justify-start ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
-              <Link
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium text-white font-medium"
-                )}
-                color="foreground"
-                href={item.href}
+              <Button
+                variant="light"
+                className="text-white font-semibold text-base"
               >
-                {item.label}
-              </Link>
+                <Link href={item.href}>{item.label}</Link>
+              </Button>
             </NavbarItem>
           ))}
+          <NavbarItem>
+            <DropdownButton title="Categorias" options={options} />
+          </NavbarItem>
         </div>
       </NavbarContent>
 
@@ -94,7 +107,6 @@ export const Navbar = () => {
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
       </NavbarContent>
 
-      {/* Opciones según si el usuario está logueado */}
       {isLoggedIn ? (
         <NavbarContent className="hidden sm:flex gap-4" justify="end">
           <Link href="/profile">
@@ -134,8 +146,8 @@ export const Navbar = () => {
                   index === 2
                     ? "primary"
                     : index === siteConfig.navMenuItems.length - 1
-                    ? "danger"
-                    : "foreground"
+                      ? "danger"
+                      : "foreground"
                 }
                 href={item.href}
                 size="lg"

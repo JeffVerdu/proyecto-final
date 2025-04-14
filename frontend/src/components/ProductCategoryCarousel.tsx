@@ -1,6 +1,7 @@
 import { Product } from "@/types";
-import React from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import { ScrollShadow } from "@heroui/react";
 
 interface Props {
   category: string;
@@ -8,8 +9,20 @@ interface Props {
 }
 
 const ProductCategoryCarousel: React.FC<Props> = ({ category, products }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1200);
+  }, []);
+
   return (
-    <section className="p-4 max-w-7xl mx-auto mb-8 last:mb-0 bg-white rounded-xl shadow-md">
+    <ScrollShadow
+      className="p-4 max-w-7xl mx-auto mb-8 last:mb-0 bg-white rounded-xl shadow-md shadow-black/70"
+      orientation="horizontal"
+    >
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-bold">{category}</h2>
         <button
@@ -24,11 +37,15 @@ const ProductCategoryCarousel: React.FC<Props> = ({ category, products }) => {
       <div className="overflow-x-auto">
         <div className="flex gap-4 snap-x snap-mandatory py-4 px-8">
           {products.map((product) => (
-            <ProductCard product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              isLoading={isLoading}
+            />
           ))}
         </div>
       </div>
-    </section>
+    </ScrollShadow>
   );
 };
 

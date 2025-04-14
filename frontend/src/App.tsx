@@ -27,7 +27,10 @@ function App() {
       <Route path="/producto/:id" element={<ProductPage />} />
       <Route element={<Login />} path="/login" />
       <Route element={<Register />} path="/register" />
-      <Route element={<CategoryPage />} path="/category" />
+      <Route
+        element={<CategoryPage key={location.pathname} />}
+        path="/categories/:category"
+      />
 
       {/* Protegidas */}
       <Route

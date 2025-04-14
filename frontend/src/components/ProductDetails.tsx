@@ -6,7 +6,7 @@ interface Props {
 }
 
 const ProductDetails: React.FC<Props> = ({ product }) => {
-  const thumbnails = Array.isArray(product.imagenes) ? product.imagenes : [];
+  const thumbnails = Array.isArray(product.image) ? product.image : [];
   const [mainImage, setMainImage] = useState(thumbnails[0]);
 
   return (
@@ -32,7 +32,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
         <div className="flex-1 flex items-center justify-center">
           <img
             src={mainImage}
-            alt={product.nombre}
+            alt={product.title}
             className="w-full h-auto max-h-[500px] object-contain rounded"
           />
         </div>
@@ -40,35 +40,23 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
 
       {/* Card: Info del producto */}
       <div className="md:col-span-2 bg-white rounded-lg shadow p-6 flex flex-col gap-4">
-        <p className="text-sm text-gray-500 capitalize">{product.condicion}</p>
         <h1 className="text-2xl font-semibold leading-tight">
-          {product.nombre}
+          {product.title}
         </h1>
 
         <div>
           <p className="text-3xl font-bold text-gray-900">
-            ${product.precio.toLocaleString()}
+            ${product.price.toLocaleString()}
           </p>
         </div>
 
         <p className="text-gray-600 text-sm whitespace-pre-line">
-          {product.descripcion}
-        </p>
-
-        <p className="text-sm text-gray-600">
-          Ubicación: {product.ubicacion}
+          {product.description}
         </p>
 
         <button className="bg-[#8AB2A6] hover:brightness-95 text-white font-bold py-3 rounded-md transition shadow-sm">
           Comprar ahora
         </button>
-
-        <div className="text-xs text-gray-600 mt-2">
-          Vendido por{" "}
-          <span className="text-blue-600 font-semibold">
-            {product.nombre_usuario}
-          </span>
-        </div>
 
         <p className="text-xs text-gray-500">
           🛡 Compra Protegida, recibí el producto que esperás o te devolvemos tu

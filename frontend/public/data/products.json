@@ -4,124 +4,144 @@
     "title": "Vidrio Puerta Horno Cocina Peabody",
     "price": 55950,
     "image": "/img/puerta1.jpg",
-    "category": "Inspirado en tus favoritos",
+    "category": "Hogar",
     "shipping": "Envío gratis",
-    "installments": "en 6 cuotas de $12.397"
+    "installments": "en 6 cuotas de $12.397",
+    "featured": true,
+    "badge": "🔥 Oferta imperdible"
   },
   {
     "id": 2,
-    "title": "Vidrio + Manija Para Horno Peabody",
-    "price": 59950,
-    "image": "/img/puerta2.jpg",
-    "category": "Inspirado en tus favoritos",
-    "shipping": "Envío gratis",
-    "installments": "en 6 cuotas de $13.283"
-  },
-  {
-    "id": 3,
-    "title": "Vidrio 55cm x 45cm para horno",
-    "price": 82380,
-    "image": "/img/puerta3.jpg",
-    "category": "Inspirado en tus favoritos",
-    "shipping": "Envío gratis",
-    "installments": "en 6 cuotas de $18.254"
-  },
-  {
-    "id": 4,
-    "title": "Vidrio horno Peabody con marco metálico",
-    "price": 72260,
-    "image": "/img/puerta4.jpg",
-    "category": "Inspirado en tus favoritos",
-    "shipping": "Envío gratis",
-    "installments": "3 cuotas sin interés"
-  },
-  {
-    "id": 5,
-    "title": "Vidrio repuesto horno cocina Coventry",
-    "price": 65560,
-    "image": "/img/puerta5.jpg",
-    "category": "Inspirado en tus favoritos",
-    "shipping": "Envío gratis",
-    "installments": "en 6 cuotas de $14.527"
-  },
-  {
-    "id": 6,
-    "title": "Zapatos deportivos para hombre",
-    "price": 32999,
-    "image": "/img/zapatillas1.jpg",
-    "category": "Deportes",
-    "shipping": "Envío gratis"
-  },
-  {
-    "id": 7,
-    "title": "Pelota de fútbol profesional",
-    "price": 18990,
-    "image": "/img/pelota.jpg",
-    "category": "Deportes",
-    "shipping": "Envío gratis"
-  },
-  {
-    "id": 8,
-    "title": "Conjunto deportivo térmico",
-    "price": 24999,
-    "image": "/img/conjunto.jpg",
-    "category": "Deportes",
-    "shipping": "Envío gratis"
-  },
-  {
-    "id": 9,
-    "title": "Mochila deportiva impermeable",
-    "price": 17990,
-    "image": "/img/mochila.jpg",
-    "category": "Deportes",
-    "shipping": "Envío gratis"
-  },
-  {
-    "id": 10,
-    "title": "Guantes de gimnasio con refuerzo",
-    "price": 10999,
-    "image": "/img/guantes.jpg",
-    "category": "Deportes"
-  },
-  {
-    "id": 11,
     "title": "Notebook HP 14 pulgadas",
     "price": 279999,
     "image": "/img/notebook.jpg",
     "category": "Tecnología",
     "shipping": "Envío gratis",
-    "installments": "en 12 cuotas sin interés"
+    "installments": "12 cuotas sin interés",
+    "featured": true,
+    "badge": "🚀 Nuevo"
   },
   {
-    "id": 12,
-    "title": "Auriculares Bluetooth con cancelación",
-    "price": 49999,
+    "id": 3,
+    "title": "Zapatillas Urbanas Hombre",
+    "price": 38999,
+    "image": "/img/zapatillas1.jpg",
+    "category": "Moda",
+    "shipping": "Envío gratis",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "Auriculares Bluetooth con Cancelación de Ruido",
+    "price": 49990,
     "image": "/img/auriculares.jpg",
     "category": "Tecnología",
     "shipping": "Envío gratis",
-    "installments": "en 3 cuotas sin interés"
+    "installments": "3 cuotas sin interés",
+    "featured": true,
+    "badge": "⭐ Recomendado"
   },
   {
-    "id": 13,
-    "title": "Monitor 24'' Full HD Samsung",
-    "price": 105990,
-    "image": "/img/monitor.jpg",
-    "category": "Tecnología",
-    "shipping": "Envío gratis"
+    "id": 5,
+    "title": "Batidora Planetaria Peabody 5L",
+    "price": 129990,
+    "image": "/img/batidora.jpg",
+    "category": "Electrodomésticos",
+    "shipping": "Envío gratis",
+    "installments": "6 cuotas sin interés",
+    "featured": false
   },
   {
-    "id": 14,
-    "title": "Mouse ergonómico inalámbrico",
+    "id": 6,
+    "title": "Conjunto Deportivo Mujer",
+    "price": 25990,
+    "image": "/img/conjunto.jpg",
+    "category": "Moda",
+    "shipping": "Envío gratis",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "title": "Mouse Ergonómico Inalámbrico",
     "price": 23990,
     "image": "/img/mouse.jpg",
-    "category": "Tecnología"
+    "category": "Tecnología",
+    "featured": false
   },
   {
-    "id": 15,
-    "title": "Teclado mecánico retroiluminado",
+    "id": 8,
+    "title": "Smart TV 50'' 4K UHD LG",
+    "price": 319999,
+    "image": "/img/smarttv.jpg",
+    "category": "Tecnología",
+    "shipping": "Envío gratis",
+    "installments": "12 cuotas sin interés",
+    "featured": true,
+    "badge": "🔥 Oferta imperdible"
+  },
+  {
+    "id": 9,
+    "title": "Mochila Deportiva Impermeable",
+    "price": 17990,
+    "image": "/img/mochila.jpg",
+    "category": "Moda",
+    "shipping": "Envío gratis",
+    "featured": false
+  },
+  {
+    "id": 10,
+    "title": "Teclado Mecánico Retroiluminado RGB",
     "price": 45990,
     "image": "/img/teclado.jpg",
     "category": "Tecnología",
-    "shipping": "Envío gratis"
+    "shipping": "Envío gratis",
+    "featured": true,
+    "badge": "🚀 Nuevo"
+  },
+  {
+    "id": 11,
+    "title": "Silla Ergonómica de Oficina Reclinable",
+    "price": 99990,
+    "image": "/img/silla.jpg",
+    "category": "Hogar",
+    "shipping": "Envío gratis",
+    "installments": "6 cuotas sin interés",
+    "featured": false
+  },
+  {
+    "id": 12,
+    "title": "Pelota de fútbol profesional",
+    "price": 18990,
+    "image": "/img/pelota.jpg",
+    "category": "Deportes",
+    "shipping": "Envío gratis",
+    "featured": false
+  },
+  {
+    "id": 13,
+    "title": "Parlante Bluetooth Portátil JBL",
+    "price": 59990,
+    "image": "/img/parlante.jpg",
+    "category": "Tecnología",
+    "shipping": "Envío gratis",
+    "installments": "3 cuotas sin interés",
+    "featured": true,
+    "badge": "⭐ Recomendado"
+  },
+  {
+    "id": 14,
+    "title": "Guantes de gimnasio con refuerzo",
+    "price": 10999,
+    "image": "/img/guantes.jpg",
+    "category": "Deportes",
+    "featured": false
+  },
+  {
+    "id": 15,
+    "title": "Lámpara Escritorio LED con USB",
+    "price": 15990,
+    "image": "/img/lampara.jpg",
+    "category": "Hogar",
+    "featured": false
   }
 ]

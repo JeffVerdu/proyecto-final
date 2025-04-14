@@ -5,6 +5,7 @@ import DefaultLayout from "@/layouts/Default";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "@/config/axios";
+import { useToast } from "@/hooks/useToast";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -12,6 +13,8 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+
+  const { showToast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,12 +32,26 @@ export default function Login() {
 
       localStorage.setItem("token", token);
 
-      alert("Inicio de sesión exitoso");
+      showToast({
+        title: "Inicio de sesión exitoso",
+        description: "Bienvenido de nuevo",
+        color: "success",
+        variant: "flat",
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+      });
       navigate("/profile");
     } catch (error: any) {
       console.error("Error al iniciar sesión:", error);
       localStorage.removeItem("token");
-      alert(error.response?.data?.message || "Credenciales incorrectas.");
+      showToast({
+        title: "Error en el inicio de sesión",
+        description: "Usuario y/o contraseña incorrectos",
+        color: "danger",
+        variant: "flat",
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+      });
     } finally {
       setLoading(false);
     }
