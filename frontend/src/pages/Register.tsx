@@ -5,6 +5,7 @@ import DefaultLayout from "@/layouts/Default";
 import { useState } from "react";
 import api from "@/config/axios";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "@/hooks/useToast";
 
 export default function Register() {
   const [form, setForm] = useState({
@@ -16,6 +17,8 @@ export default function Register() {
   });
 
   const navigate = useNavigate();
+
+  const { showToast } = useToast();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -29,14 +32,27 @@ export default function Register() {
     e.preventDefault();
 
     if (!validatePassword(form.password)) {
-      alert(
-        "La contraseña debe tener entre 6 y 12 caracteres, incluir al menos una mayúscula y una minúscula."
-      );
+      showToast({
+        title: "Registro incorrecto",
+        description:
+          "La contraseña debe tener entre 6 y 12 caracteres, incluir al menos una mayúscula y una minúscula.",
+        color: "danger",
+        variant: "flat",
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+      });
       return;
     }
 
     if (form.password !== form.confirmPassword) {
-      alert("Las contraseñas no coinciden.");
+      showToast({
+        title: "Registro incorrecto",
+        description: "Las contraseñas no coinciden.",
+        color: "danger",
+        variant: "flat",
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+      });
       return;
     }
 
@@ -55,7 +71,14 @@ export default function Register() {
       navigate("/profile");
     } catch (error: any) {
       console.error("Error en el registro:", error);
-      alert(error.response?.data?.error || "Error al registrar usuario.");
+      showToast({
+        title: "Registro incorrecto",
+        description: "Error al registrar usuario.",
+        color: "danger",
+        variant: "flat",
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+      });
     }
   };
 

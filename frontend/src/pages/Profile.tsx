@@ -2,7 +2,14 @@ import { useEffect, useState } from "react";
 import api from "@/config/axios";
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/Default";
-import { UserCircle, Mail, MapPin, Calendar, Briefcase, LinkIcon } from "lucide-react";
+import {
+  UserCircle,
+  Mail,
+  MapPin,
+  Calendar,
+  Briefcase,
+  LinkIcon,
+} from "lucide-react";
 import LogoutButton from "@/components/LogoutButton";
 import { Link } from "react-router-dom";
 
@@ -16,7 +23,6 @@ export default function ProfilePage() {
     imagenes: string;
     precio: number;
   };
-  
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -24,9 +30,10 @@ export default function ProfilePage() {
         const response = await api.get("/auth/me");
         setUser(response.data);
 
-        const productosRes = await api.get(`/productos/usuario/${response.data.id}`);
+        const productosRes = await api.get(
+          `/productos/usuario/${response.data.id}`
+        );
         setMisProductos(productosRes.data);
-  
       } catch (error) {
         console.error("Error al obtener el perfil:", error);
       }
@@ -39,21 +46,22 @@ export default function ProfilePage() {
     try {
       if (typeof imagenes === "string" && imagenes.trim().startsWith("[")) {
         const parsed = JSON.parse(imagenes);
-        return Array.isArray(parsed) && parsed[0] ? parsed[0] : "/placeholder.svg";
+        return Array.isArray(parsed) && parsed[0]
+          ? parsed[0]
+          : "/placeholder.svg";
       }
-  
+
       if (Array.isArray(imagenes)) {
         return imagenes[0] || "/placeholder.svg";
       }
-  
+
       return imagenes || "/placeholder.svg";
     } catch (e) {
       console.warn("Error parseando imágenes:", e);
       return "/placeholder.svg";
     }
   };
-  
-  
+
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center py-8 md:py-1">
@@ -62,48 +70,48 @@ export default function ProfilePage() {
         </div>
 
         <div className="w-full max-w-4xl mx-auto mt-8">
-          <div className="bg-[#F6F1DE] dark:bg-[#3E3F5B] rounded-xl shadow-md overflow-hidden">
-            <div className="h-32 bg-[#ACD3A8] dark:bg-[#8AB2A6]"></div>
+          <div className="bg-white rounded-xl shadow-md shadow-black overflow-hidden">
+            <div className="h-32 bg-[#ACD3A8]"></div>
             <div className="relative px-6 py-4">
               <div className="absolute -top-16 left-4">
                 <div className="h-32 w-32 rounded-full border-4 border-[#F6F1DE] dark:border-[#3E3F5B] bg-[#8AB2A6] dark:bg-[#8AB2A6] flex items-center justify-center">
-                  <UserCircle className="h-36 w-24 text-[#3E3F5B] dark:text-[#F6F1DE]" />
+                  <UserCircle className="h-36 w-24 text-[#3E3F5B]" />
                 </div>
               </div>
 
               <div className="mt-16">
-                <h2 className="text-2xl font-bold text-[#3E3F5B] dark:text-[#F6F1DE]">
+                <h2 className="text-2xl font-bold text-[#3E3F5B]">
                   {user ? user.nombre : "Cargando..."}
                 </h2>
 
                 <div className="mt-6 space-y-4">
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-[#ACD3A8] dark:text-[#ACD3A8]" />
-                    <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">
+                    <span className="text-[#3E3F5B]">
                       {user ? user.email : "Cargando..."}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-3">
                     <MapPin className="h-5 w-5 text-[#ACD3A8] dark:text-[#ACD3A8]" />
-                    <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">San Francisco, CA</span>
+                    <span className="text-[#3E3F5B]">San Francisco, CA</span>
                   </div>
 
                   <div className="flex items-center gap-3">
                     <Calendar className="h-5 w-5 text-[#ACD3A8] dark:text-[#ACD3A8]" />
-                    <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">Joined January 2023</span>
+                    <span className="text-[#3E3F5B]">Joined January 2023</span>
                   </div>
 
                   <div className="flex items-center gap-3">
                     <Briefcase className="h-5 w-5 text-[#ACD3A8] dark:text-[#ACD3A8]" />
-                    <span className="text-[#3E3F5B] dark:text-[#F6F1DE]">
+                    <span className="text-[#3E3F5B]">
                       {user ? user.perfil : "Cargando..."}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-3">
                     <LinkIcon className="h-5 w-5 text-[#ACD3A8] dark:text-[#ACD3A8]" />
-                    <a href="#" className="text-[#ACD3A8] dark:text-[#ACD3A8] hover:underline">
+                    <a href="#" className="text-[#3E3F5B] hover:underline">
                       github.com/janedoe
                     </a>
                   </div>
@@ -125,7 +133,9 @@ export default function ProfilePage() {
                           alt={prod.nombre}
                           className="w-full h-40 object-cover rounded mb-2"
                         />
-                        <h4 className="font-bold text-[#3E3F5B] dark:text-[#F6F1DE]">{prod.nombre}</h4>
+                        <h4 className="font-bold text-[#3E3F5B] dark:text-[#F6F1DE]">
+                          {prod.nombre}
+                        </h4>
                         <p className="text-sm text-[#8AB2A6]">${prod.precio}</p>
                       </Link>
                     ))}
@@ -135,7 +145,7 @@ export default function ProfilePage() {
                 {/* ➕ Botón Crear publicación */}
                 <div className="mt-10 flex justify-center">
                   <Link
-                    to="/post"
+                    to="/post/new"
                     className="px-6 py-3 rounded-xl bg-[#ACD3A8] text-[#3E3F5B] font-semibold shadow hover:brightness-95 transition"
                   >
                     Crear publicación

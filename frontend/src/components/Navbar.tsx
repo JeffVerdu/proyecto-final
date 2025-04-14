@@ -17,10 +17,13 @@ import { useLocation } from "react-router-dom";
 import LogoutButton from "@/components/LogoutButton";
 import DropdownButton from "./DropdownButton";
 import { useEffect, useState } from "react";
+import { useSearchStore } from "@/store/useSearchStore";
 
 export const Navbar = () => {
   const [options, setOptions] = useState([]);
   const location = useLocation();
+
+  const { term, setTerm } = useSearchStore();
 
   useEffect(() => {
     fetch("/data/categories.json")
@@ -43,13 +46,14 @@ export const Navbar = () => {
 
   const searchInput = (
     <Input
-      aria-label="Search"
+      aria-label="Buscar"
       classNames={{
         inputWrapper: "bg-default-100",
         input: "text-sm",
       }}
-      labelPlacement="outside"
       placeholder="Buscar..."
+      value={term}
+      onChange={(e) => setTerm(e.target.value)}
       startContent={
         <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
       }

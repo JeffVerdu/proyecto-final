@@ -21,16 +21,16 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const response = await api.post("/auth/login", {
-        email,
-        password,
-      });
+      // const response = await api.post("/auth/login", {
+      //   email,
+      //   password,
+      // });
 
-      const { token } = response.data;
+      // const { token } = response.data;
 
-      if (!token) throw new Error("Token no recibido desde el servidor");
+      // if (!token) throw new Error("Token no recibido desde el servidor");
 
-      localStorage.setItem("token", token);
+      // localStorage.setItem("token", token);
 
       showToast({
         title: "Inicio de sesión exitoso",
