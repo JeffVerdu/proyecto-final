@@ -11,7 +11,9 @@ import Register from "@/pages/Register";
 import Profile from "@/pages/Profile";
 import GalleryPage from "@/pages/Gallery";
 import CreatePostPage from "@/pages/CreatePost";
-import CategoryPage from "./pages/CategoryPage";
+import CategoryPage from "@/pages/CategoryPage";
+import EditarProductoPage from "@/pages/EditarProductoPage";
+import CartPage from "@/pages/CartPage";
 
 // import ProtectedRoute from "@/config/ProtectedRoute";
 
@@ -59,7 +61,27 @@ function App() {
             <CreatePostPage />
           </ProtectedRoute>
         }
+<<<<<<< Updated upstream
       /> */}
+=======
+      />
+      <Route
+        path="/editar/:id"
+        element={
+          <ProtectedRoute>
+            <EditarProductoPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/carrito"
+        element={
+          <ProtectedRoute>
+            <CartPage />
+          </ProtectedRoute>
+        }
+      />
+>>>>>>> Stashed changes
     </Routes>
   );
 }

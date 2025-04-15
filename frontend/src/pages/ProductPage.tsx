@@ -7,10 +7,11 @@ import { Product } from "@/types";
 
 export default function ProductPage() {
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+<<<<<<< Updated upstream
     // api.get(`/productos/${id}`)
     //   .then((res) => {
     //     setProduct(res.data);
@@ -32,6 +33,14 @@ export default function ProductPage() {
         } else {
           setProduct(null);
         }
+=======
+    api.get(`/productos/${id}`)
+      .then((res) => {
+        const p = res.data;
+        p.imagenes = typeof p.imagenes === "string" ? JSON.parse(p.imagenes) : p.imagenes;
+
+        setProduct(p);
+>>>>>>> Stashed changes
       })
       .catch((err) => {
         console.error("Error al cargar producto:", err);

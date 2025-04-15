@@ -22,7 +22,7 @@ exports.register = async (req, res) => {
     // Generar token después del registro
     const user = result.rows[0];
     const token = jwt.sign({ id: user.id, perfil: user.perfil }, process.env.JWT_SECRET, {
-      expiresIn: '1h',
+      expiresIn: '10m',
     });
 
     res.status(201).json({

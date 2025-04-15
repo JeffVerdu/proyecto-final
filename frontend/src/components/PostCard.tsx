@@ -3,49 +3,73 @@ import { Link } from "react-router-dom";
 
 interface Props {
   product: Product;
+  userId?: number;
+  onDelete?: (id: number) => void;
 }
 
-const PostCard = ({ product }: Props) => {
+export default function PostCard({ product, userId, onDelete }: Props) {
+  const getImagenPrincipal = (imagenes: any): string => {
+    try {
+      if (Array.isArray(imagenes)) {
+        return imagenes[0] || "/placeholder.svg";
+      }
+
+      if (typeof imagenes === "string" && imagenes.trim().startsWith("[")) {
+        const parsed = JSON.parse(imagenes);
+        return parsed[0] || "/placeholder.svg";
+      }
+
+      return imagenes || "/placeholder.svg";
+    } catch (e) {
+      return "/placeholder.svg";
+    }
+  };
+
+  const formatearPrecio = (precio: any) =>
+    !isNaN(Number(precio)) ? `$${Number(precio).toLocaleString()}` : "Precio no disponible";
+
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-md transition-transform hover:scale-[1.02]">
-      {/* Imagen */}
-      <div className="relative h-64 w-full">
+    <div className="border rounded-xl p-4 bg-white hover:shadow-md transition flex flex-col">
+      <Link to={`/producto/${product.id}`}>
         <img
-          src={product.image || "/placeholder.svg"}
-          alt={product.title}
-          className="absolute inset-0 w-full h-full object-cover"
+          src={getImagenPrincipal(product.imagenes)}
+          alt={product.nombre}
+          className="w-full h-40 object-cover rounded mb-2"
         />
-      </div>
+        <h4 className="font-bold text-[#3E3F5B] dark:text-[#F6F1DE]">{product.nombre}</h4>
+        <p className="text-sm text-[#8AB2A6]">{formatearPrecio(product.precio)}</p>
 
-      {/* Info */}
-      <div className="p-4 flex flex-col gap-2">
-        <h3 className="text-lg font-semibold text-[#3E3F5B] dark:text-[#F6F1DE]">
-          {product.title}
-        </h3>
-
-        <p className="text-2xl font-bold text-gray-900">
-          ${product.price.toLocaleString()}
-        </p>
-
-        {product.installments && (
-          <p className="text-sm text-gray-600">{product.installments}</p>
-        )}
-
-        {product.shipping && (
-          <p className="text-green-600 text-sm font-medium">
-            {product.shipping}
+        {/* 👇 Agregado: nombre del vendedor */}
+        {product.nombre_usuario && (
+          <p className="text-xs text-gray-500 mt-1">
+            Vendido por <span className="font-medium">{product.nombre_usuario}</span>
           </p>
         )}
 
-        <Link
-          to={`/producto/${product.id}`}
-          className="mt-2 w-full inline-block bg-blue-600 text-white text-center py-2 rounded hover:bg-blue-700 transition"
-        >
+        <button className="mt-2 bg-[#3861FB] text-white py-2 rounded hover:bg-blue-700 transition w-full">
           Ver más
-        </Link>
-      </div>
+        </button>
+      </Link>
+
+      {userId && product.usuario_id === userId && (
+        <div className="flex gap-2 mt-3">
+          <Link
+            to={`/editar/${product.id}`}
+            className="flex-1 text-sm bg-blue-500 text-white rounded px-3 py-2 hover:bg-blue-600 transition text-center"
+          >
+            Editar
+          </Link>
+          <button
+            onClick={() => {
+              const confirmar = confirm("¿Estás seguro de eliminar esta publicación?");
+              if (confirmar) onDelete?.(product.id);
+            }}
+            className="flex-1 text-sm bg-red-500 text-white rounded px-3 py-2 hover:bg-red-600 transition"
+          >
+            Eliminar
+          </button>
+        </div>
+      )}
     </div>
   );
-};
-
-export default PostCard;
+}

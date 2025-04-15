@@ -30,7 +30,12 @@ exports.obtenerProductos = async (req, res) => {
         p.condicion, 
         p.ubicacion, 
         p.usuario_id, 
-        u.nombre AS nombre_usuario
+        u.nombre AS nombre_usuario,
+        p.categoria,
+        CASE 
+          WHEN p.precio::numeric >= 100000 THEN true
+          ELSE false
+        END AS envio_gratis
       FROM productos p
       JOIN usuarios u ON p.usuario_id = u.id
     `);
@@ -41,6 +46,7 @@ exports.obtenerProductos = async (req, res) => {
     res.status(500).json({ error: "Error en el servidor" });
   }
 };
+
 
 
 exports.obtenerPorUsuario = async (req, res) => {
@@ -54,7 +60,8 @@ exports.obtenerPorUsuario = async (req, res) => {
         p.imagenes, 
         p.precio, 
         p.condicion, 
-        p.ubicacion, 
+        p.ubicacion,
+        p.categoria,
         p.usuario_id, 
         u.nombre AS nombre_usuario
       FROM productos p
@@ -81,7 +88,8 @@ exports.obtenerProductoPorId = async (req, res) => {
         p.imagenes, 
         p.precio, 
         p.condicion, 
-        p.ubicacion, 
+        p.ubicacion,
+        p.categoria, 
         p.usuario_id, 
         u.nombre AS nombre_usuario
       FROM productos p
@@ -100,4 +108,45 @@ exports.obtenerProductoPorId = async (req, res) => {
   }
 };
 
+exports.eliminarProducto = async (req, res) => {
+  const { id } = req.params;
+  try {
+    await pool.query("DELETE FROM productos WHERE id = $1", [id]);
+    res.status(200).json({ mensaje: "Producto eliminado correctamente" });
+  } catch (err) {
+    console.error("Error al eliminar producto:", err);
+    res.status(500).json({ error: "Error al eliminar producto" });
+  }
+};
 
+exports.actualizarProducto = async (req, res) => {
+  const { id } = req.params;
+  const usuario_id = req.user.id; // viene del token gracias a verifyToken
+  const { nombre, descripcion, imagenes, precio, condicion, ubicacion } = req.body;
+
+  try {
+    // Verificamos si el producto existe y le pertenece al usuario
+    const producto = await pool.query("SELECT * FROM productos WHERE id = $1", [id]);
+
+    if (producto.rows.length === 0) {
+      return res.status(404).json({ error: "Producto no encontrado" });
+    }
+
+    if (producto.rows[0].usuario_id !== usuario_id) {
+      return res.status(403).json({ error: "No tienes permiso para editar este producto" });
+    }
+
+    // Actualizamos el producto
+    await pool.query(
+      `UPDATE productos 
+       SET nombre = $1, descripcion = $2, imagenes = $3, precio = $4, condicion = $5, ubicacion = $6
+       WHERE id = $7`,
+      [nombre, descripcion, imagenes, precio, condicion, ubicacion, id]
+    );
+
+    res.status(200).json({ mensaje: "Producto actualizado correctamente" });
+  } catch (err) {
+    console.error("Error al actualizar producto:", err);
+    res.status(500).json({ error: "Error en el servidor" });
+  }
+};

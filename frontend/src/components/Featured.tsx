@@ -1,17 +1,20 @@
 import { Product } from "@/types";
 import { useEffect, useState } from "react";
 import ProductCard from "@/components/ProductCard";
+import api from "@/config/axios";
 
 const Featured = () => {
   const [featuredPosts, setFeaturedPosts] = useState<Product[]>([]);
 
   useEffect(() => {
-    fetch("/data/products.json")
-      .then((res) => res.json())
-      .then((data: Product[]) => {
-        const featured = data.filter((p) => p.featured).slice(0, 5);
-        setFeaturedPosts(featured);
-      });
+    api.get("/productos")
+      .then((res) => {
+        const destacados = res.data
+          .sort((a: Product, b: Product) => Number(a.precio) - Number(b.precio))
+          .slice(0, 5);
+        setFeaturedPosts(destacados);
+      })
+      .catch((err) => console.error("Error al cargar destacados:", err));
   }, []);
 
   return (
@@ -19,7 +22,7 @@ const Featured = () => {
       <div className="overflow-x-auto">
         <div className="flex snap-x snap-mandatory mx-auto max-w-7xl py-5 gap-4 justify-center">
           {featuredPosts.map((product) => (
-            <ProductCard key={product.id} product={product} isFeatured />
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>
