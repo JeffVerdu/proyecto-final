@@ -12,12 +12,49 @@ exports.register = async (req, res) => {
     if (userExist.rows.length) return res.status(401).json({ error: 'Usuario ya registrado' });
 
     const hashedPassword = await bcrypt.hash(password, 10);
+<<<<<<< Updated upstream
     await pool.query('INSERT INTO usuarios (nombre, email, password, perfil) VALUES ($1, $2, $3, $4)',
       [nombre, email, hashedPassword, perfil]);
     res.status(201).json({ mensaje: 'Registro exitoso' });
     } catch (err) {
         console.error('Error en /register:', err);
         res.status(500).json({ error: err.message || 'Error en el servidor' });
+=======
+    const result = await pool.query(
+      'INSERT INTO usuarios (nombre, email, password, perfil) VALUES ($1, $2, $3, $4) RETURNING id, email, perfil',
+      [nombre, email, hashedPassword, perfil]
+    );
+
+    // Generar token después del registro
+    const user = result.rows[0];
+    const token = jwt.sign({ id: user.id, perfil: user.perfil }, process.env.JWT_SECRET, {
+      expiresIn: '10m',
+    });
+
+    res.status(201).json({
+      mensaje: 'Registro exitoso',
+      token,
+      email: user.email,
+      perfil: user.perfil,
+    });
+  } catch (err) {
+    console.error('Error en /register:', err);
+    res.status(500).json({ error: err.message || 'Error en el servidor' });
+  }
+};
+
+exports.getUserProfile = async (req, res) => {
+  const userId = req.user.id;
+
+  try {
+    const result = await pool.query(
+      'SELECT id, nombre, email, perfil FROM usuarios WHERE id = $1',
+      [userId]
+    );
+
+    if (!result.rows.length) {
+      return res.status(404).json({ error: 'Usuario no encontrado' });
+>>>>>>> Stashed changes
     }
 };
 
