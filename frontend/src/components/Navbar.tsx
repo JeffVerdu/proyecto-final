@@ -17,19 +17,14 @@ import { useLocation } from "react-router-dom";
 import LogoutButton from "@/components/LogoutButton";
 import DropdownButton from "./DropdownButton";
 import { useEffect, useState } from "react";
-<<<<<<< Updated upstream
 import { useSearchStore } from "@/store/useSearchStore";
-=======
 import { useCart } from "@/context/CartContext";
-
->>>>>>> Stashed changes
 
 export const Navbar = () => {
   const [options, setOptions] = useState([]);
   const location = useLocation();
+
   const { items } = useCart();
-
-
   const { term, setTerm } = useSearchStore();
 
   useEffect(() => {
@@ -41,7 +36,6 @@ export const Navbar = () => {
             category.title
         );
         setOptions(categories);
-        console.log("Categories fetched:", categories);
       })
       .catch((error) => console.error("Error fetching categories:", error));
   }, []);
@@ -170,8 +164,8 @@ export const Navbar = () => {
                   index === 2
                     ? "primary"
                     : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
+                    ? "danger"
+                    : "foreground"
                 }
                 href={item.href}
                 size="lg"

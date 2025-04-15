@@ -1,0 +1,526 @@
+2025-04-15T00:35:19.126Z - ✅ Conexión a la base de datos establecida
+2025-04-15T00:35:19.130Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T00:41:05.087Z - ✅ Conexión a la base de datos establecida
+2025-04-15T00:41:05.090Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T00:46:17.841Z - ✅ Conexión a la base de datos establecida
+2025-04-15T00:46:17.846Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T00:47:43.873Z - 🔴 Uncaught Exception: Connection terminated unexpectedly
+2025-04-15T00:52:55.991Z - 🔴 Uncaught Exception: Connection terminated unexpectedly
+2025-04-15T00:53:18.618Z - ✅ Conexión a la base de datos establecida
+2025-04-15T00:53:18.625Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T00:54:22.629Z ::1 GET /api/carrito/1 200 - 1284.619 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:54:22.860Z ::1 GET /favicon.ico 404 - 4.152 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:54:42.182Z ::1 GET /api/productos 304 - 2194.263 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:56:22.749Z - ✅ Conexión a la base de datos establecida
+2025-04-15T00:56:22.753Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T00:56:22.842Z - ✅ Conexión a la base de datos establecida
+2025-04-15T00:56:22.849Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T00:56:26.216Z - ✅ Conexión a la base de datos establecida
+2025-04-15T00:56:26.217Z - ✅ Conexión a la base de datos establecida
+2025-04-15T00:56:26.219Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T00:56:26.226Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T00:56:34.210Z ::1 GET /api/carrito/4 200 - 1230.118 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:56:34.375Z ::1 GET /api/carrito/4 200 - 151.759 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:56:34.515Z ::1 GET /api/carrito/4 200 - 135.053 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:56:34.723Z ::1 GET /api/carrito/4 200 - 202.564 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:56:34.871Z ::1 GET /api/productos 304 - 1896.945 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:56:35.848Z ::1 GET /api/productos 304 - 971.726 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:56:36.332Z ::1 GET /api/productos 304 - 479.030 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:56:36.769Z ::1 GET /api/productos 304 - 432.110 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:56:44.442Z ::1 GET /api/carrito/4 200 - 228.911 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:56:44.590Z ::1 GET /api/carrito/4 200 - 143.268 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:56:44.744Z ::1 GET /api/carrito/4 200 - 151.092 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:56:44.891Z ::1 GET /api/carrito/4 200 - 141.636 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:57:11.388Z ::1 GET /api/productos 304 - 2630.890 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:57:11.855Z ::1 GET /api/productos 304 - 463.215 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:57:12.359Z ::1 GET /api/productos 304 - 501.324 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:57:13.004Z ::1 GET /api/productos 200 - - ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:57:13.421Z ::1 GET /api/carrito/4 200 - 145.632 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:57:13.627Z ::1 GET /api/carrito/4 200 - 201.704 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:57:13.832Z ::1 GET /api/carrito/4 200 - 200.854 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:57:14.037Z ::1 GET /api/carrito/4 200 - 200.242 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:00.328Z ::1 GET /api/carrito/4 200 - 1731.882 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:00.473Z ::1 GET /api/carrito/4 200 - 142.087 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:00.634Z ::1 GET /api/carrito/4 200 - 158.349 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:00.839Z ::1 GET /api/carrito/4 200 - 200.065 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:10.461Z ::1 POST /api/auth/login 200 - 285.878 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"email":"sandypardo24@gmail.com","password":"******"}
+2025-04-15T00:59:10.807Z ::1 GET /api/auth/me 200 - 152.451 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:10.978Z ::1 GET /api/auth/me 304 - 166.776 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:13.033Z ::1 GET /api/productos/usuario/5 304 - 2214.511 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:13.549Z ::1 GET /api/productos/usuario/5 304 - 510.685 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:21.094Z ::1 GET /api/productos 200 - 1203.900 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:21.533Z ::1 GET /api/productos 200 - 1644.494 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:23.392Z ::1 GET /api/productos/36 304 - 141.942 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:23.543Z ::1 GET /api/productos/36 304 - 147.550 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:24.565Z ::1 POST /api/carrito/items 200 - 148.721 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":4,"producto_id":36,"cantidad":1}
+2025-04-15T00:59:24.986Z ::1 GET /api/productos 200 - 5091.964 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:26.476Z ::1 GET /api/productos 304 - 1484.928 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:27.676Z ::1 GET /api/productos 304 - 1195.543 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:28.433Z ::1 GET /api/productos 304 - 750.874 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:28.950Z ::1 GET /api/productos 304 - 512.312 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:29.522Z ::1 GET /api/productos 304 - 566.257 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:32.728Z ::1 GET /api/productos/115 304 - 868.974 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:33.512Z ::1 GET /api/productos/115 304 - 778.035 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:34.018Z ::1 POST /api/carrito/items 200 - 144.345 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":4,"producto_id":115,"cantidad":1}
+2025-04-15T00:59:36.484Z ::1 GET /api/productos 304 - 909.795 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:37.608Z ::1 GET /api/productos 304 - 1119.267 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:38.227Z ::1 GET /api/productos 304 - 614.909 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:38.661Z ::1 GET /api/productos 304 - 429.024 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:39.923Z ::1 GET /api/productos/88 200 - 143.056 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:40.070Z ::1 GET /api/productos/88 304 - 141.710 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:41.095Z ::1 POST /api/carrito/items 200 - 143.688 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":4,"producto_id":88,"cantidad":1}
+2025-04-15T00:59:44.069Z ::1 GET /api/productos 304 - 858.738 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:44.879Z ::1 GET /api/productos 304 - 807.145 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:45.694Z ::1 GET /api/productos 304 - 811.667 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:46.317Z ::1 GET /api/productos 304 - 619.837 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:58.082Z ::1 GET /api/productos/55 200 - 1324.805 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:58.219Z ::1 GET /api/productos/55 304 - 131.587 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T00:59:59.413Z ::1 POST /api/carrito/items 200 - 234.209 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":4,"producto_id":55,"cantidad":1}
+2025-04-15T01:00:00.956Z ::1 GET /api/carrito/4 500 - 254.706 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:02.383Z ::1 GET /api/carrito/4 500 - 1421.143 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:03.715Z ::1 GET /api/carrito/4 500 - 1327.608 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:04.943Z ::1 GET /api/carrito/4 500 - 1222.902 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:10.865Z ::1 GET /api/carrito/4 200 - - ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:12.520Z ::1 GET /api/carrito/4 500 - 1429.073 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:12.521Z ::1 GET /api/carrito/4 500 - 1428.319 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:12.523Z ::1 GET /api/carrito/4 500 - 1427.236 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:13.955Z ::1 POST /api/carrito/items 200 - 1393.148 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":4,"producto_id":55,"cantidad":1}
+2025-04-15T01:00:14.568Z ::1 GET /api/carrito/4 500 - 187.423 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:15.782Z ::1 GET /api/carrito/4 500 - 1210.332 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:17.026Z ::1 GET /api/carrito/4 500 - 1239.749 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:18.463Z ::1 GET /api/productos 304 - 2297.553 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:18.465Z ::1 GET /api/carrito/4 500 - 1433.311 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:18.987Z ::1 GET /api/productos 304 - 516.697 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:19.799Z ::1 GET /api/productos 304 - 807.783 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:00:20.411Z ::1 GET /api/productos 304 - 607.105 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:03.563Z ::1 GET /api/auth/me 304 - 2097.517 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:03.695Z ::1 GET /api/carrito/4 500 - 2230.985 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:03.713Z ::1 GET /api/auth/me 304 - 145.777 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:04.990Z ::1 GET /api/carrito/4 500 - 1289.773 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:05.198Z ::1 GET /api/carrito/4 500 - 203.553 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:05.948Z ::1 GET /api/productos/usuario/5 304 - 2370.323 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:06.407Z ::1 GET /api/carrito/4 500 - 1204.275 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:06.517Z ::1 GET /api/productos/usuario/5 304 - 563.586 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:06.854Z ::1 GET /api/auth/me 304 - 136.336 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:06.999Z ::1 GET /api/auth/me 304 - 140.307 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:09.251Z ::1 GET /api/productos/usuario/5 304 - 2388.217 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:10.114Z - 🔴 Uncaught Exception: Connection terminated unexpectedly
+2025-04-15T01:07:10.323Z ::1 GET /api/productos/usuario/5 304 - 1065.987 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:11.155Z - 🔴 Uncaught Exception: Connection terminated unexpectedly
+2025-04-15T01:07:35.812Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:07:35.815Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:07:38.384Z ::1 GET /api/auth/me 304 - 1452.315 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:38.578Z ::1 GET /api/auth/me 304 - 188.773 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:40.638Z ::1 GET /api/productos/usuario/5 304 - 2237.540 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:41.151Z ::1 GET /api/productos/usuario/5 304 - 506.882 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:42.367Z ::1 GET /api/productos/36 304 - 226.910 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:42.521Z ::1 GET /api/productos/36 304 - 151.336 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:46.464Z ::1 GET /api/carrito/4 500 - 236.782 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:46.467Z ::1 GET /api/auth/me 304 - 235.528 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:46.668Z ::1 GET /api/carrito/4 500 - 197.410 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:47.898Z ::1 GET /api/auth/me 304 - 1424.678 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:48.024Z ::1 GET /api/carrito/4 500 - 1351.039 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:48.205Z ::1 GET /api/carrito/4 500 - 173.655 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:48.696Z ::1 GET /api/productos/usuario/5 304 - 2211.466 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:49.233Z ::1 GET /api/productos/usuario/5 304 - 533.457 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:50.566Z ::1 GET /api/productos 304 - 2200.034 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:51.052Z ::1 GET /api/productos 304 - 480.229 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:51.843Z ::1 GET /api/productos 304 - 786.012 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:52.432Z ::1 GET /api/productos 304 - 585.791 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:52.912Z ::1 GET /api/productos/73 304 - 168.054 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:53.058Z ::1 GET /api/productos/73 304 - 142.735 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:54.552Z ::1 POST /api/carrito/items 200 - 160.820 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":4,"producto_id":73,"cantidad":1}
+2025-04-15T01:07:59.171Z ::1 GET /api/productos 304 - 1052.375 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:07:59.637Z ::1 GET /api/productos 304 - 460.119 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:08:01.901Z ::1 GET /api/productos/53 200 - 310.757 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:08:02.120Z ::1 GET /api/productos/53 304 - 209.265 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:08:03.050Z ::1 POST /api/carrito/items 200 - 151.396 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":4,"producto_id":53,"cantidad":1}
+2025-04-15T01:08:04.691Z ::1 GET /api/carrito/4 500 - 161.679 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:08:06.123Z ::1 GET /api/carrito/4 500 - 1426.404 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:08:07.660Z ::1 GET /api/carrito/4 500 - 1531.624 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:08:08.888Z ::1 GET /api/carrito/4 500 - 1222.189 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:09:54.152Z ::1 GET /api/carrito/4 500 - 1421.973 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:12:38.059Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:12:38.065Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:12:38.175Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:12:38.180Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:12:41.059Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:12:41.064Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:12:41.097Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:12:41.102Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:12:43.136Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:12:43.143Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:12:43.356Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:12:43.360Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:12:49.254Z ::1 GET /api/carrito/4 500 - 1229.615 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:12:50.508Z ::1 GET /api/carrito/4 500 - 1248.439 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:12:52.115Z ::1 GET /api/carrito/4 500 - 1601.529 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:12:53.444Z ::1 GET /api/carrito/4 500 - 1322.365 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:13:16.590Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:13:16.597Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:13:16.794Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:13:16.800Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:13:25.123Z ::1 GET /api/carrito/4 200 - 2278.156 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:13:25.919Z ::1 GET /api/carrito/4 304 - 790.285 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:13:26.402Z ::1 GET /api/carrito/4 304 - 478.769 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:13:27.160Z ::1 GET /api/carrito/4 304 - 753.998 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:13:40.139Z ::1 GET /api/auth/me 304 - 1220.287 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:13:40.176Z ::1 POST /api/logs/logout 200 - 2.242 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"user":"sandypardo24@gmail.com"}
+2025-04-15T01:14:02.074Z - 🛑 Servidor detenido manualmente
+2025-04-15T01:14:06.968Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:14:06.976Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:17:05.072Z ::1 GET /api/productos 304 - 1978.620 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:17:05.963Z ::1 GET /api/productos 304 - 886.131 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:17:06.440Z ::1 GET /api/productos 304 - 473.060 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:17:08.936Z ::1 GET /api/productos 304 - 2492.173 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:20:19.902Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:20:19.905Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:20:20.000Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:20:20.004Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:20:24.509Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:20:24.509Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:20:24.515Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:20:24.517Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:21:52.571Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:21:52.579Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:21:52.777Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:21:52.783Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:22:18.683Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:22:18.683Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:22:18.690Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:22:18.691Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:22:21.448Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:22:21.448Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:22:21.456Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:22:21.457Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:23:21.968Z - 🔴 Uncaught Exception: Connection terminated unexpectedly
+2025-04-15T01:23:22.991Z - 🔴 Uncaught Exception: Connection terminated unexpectedly
+2025-04-15T01:24:28.979Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:24:28.982Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:24:37.655Z ::1 GET /api/carrito/4 304 - 3087.524 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:24:38.290Z ::1 GET /api/carrito/4 304 - 628.321 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:24:38.405Z ::1 GET /api/productos 304 - 3846.390 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:24:38.780Z ::1 GET /api/productos 304 - 370.607 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:24:39.900Z ::1 GET /api/carrito/4 304 - 1605.794 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:24:40.477Z ::1 GET /api/carrito/4 304 - 573.229 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:24:42.817Z ::1 GET /api/productos 200 - - ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:24:43.938Z ::1 GET /api/carrito/4 304 - 850.810 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:24:44.551Z ::1 GET /api/carrito/4 304 - 607.298 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:24:45.102Z ::1 GET /api/carrito/4 304 - 545.072 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:24:45.739Z ::1 GET /api/carrito/4 304 - 633.271 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:27:44.009Z ::1 POST /api/auth/login 401 - 2814.947 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"email":"sandyardo24@gmail.com","password":"******"}
+2025-04-15T01:27:51.853Z ::1 POST /api/auth/login 200 - 279.565 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"email":"sandypardo24@gmail.com","password":"******"}
+2025-04-15T01:27:52.120Z ::1 GET /api/auth/me 304 - 150.069 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:27:52.297Z ::1 GET /api/auth/me 304 - 174.013 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:27:54.659Z ::1 GET /api/productos/usuario/5 304 - 2526.941 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:27:55.482Z ::1 GET /api/productos/usuario/5 304 - 819.668 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:28:38.893Z ::1 GET /api/auth/me 304 - 1459.530 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:28:39.717Z ::1 GET /api/productos/usuario/5 304 - 810.539 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:28:41.921Z ::1 GET /api/auth/me 304 - 533.700 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:28:42.063Z ::1 GET /api/auth/me 304 - 136.579 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:28:44.426Z ::1 GET /api/productos/usuario/5 304 - 2495.002 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:28:44.891Z ::1 GET /api/productos/usuario/5 304 - 461.339 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:34:41.199Z ::1 GET /api/productos/36 304 - 2870.542 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:34:41.382Z ::1 GET /api/productos/36 304 - 178.490 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:34:42.919Z ::1 POST /api/carrito/items 200 - 232.655 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":4,"producto_id":36,"cantidad":1}
+2025-04-15T01:34:45.900Z ::1 GET /api/carrito/4 200 - 1341.184 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:34:46.683Z ::1 GET /api/carrito/4 304 - 778.157 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:34:47.346Z ::1 GET /api/carrito/4 304 - 657.965 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:34:48.087Z ::1 GET /api/carrito/4 304 - 736.506 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:34:55.388Z ::1 DELETE /api/carrito/item 200 - 225.936 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":4,"producto_id":36}
+2025-04-15T01:35:13.408Z - 🔴 Uncaught Exception: Connection terminated unexpectedly
+2025-04-15T01:35:49.172Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:35:49.179Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:37:51.027Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:37:51.027Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:37:51.032Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:37:51.032Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:39:24.057Z ::1 GET /api/productos 200 - 2280.904 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:24.567Z ::1 GET /api/productos 304 - 505.687 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:25.390Z ::1 GET /api/productos 304 - 817.049 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:25.957Z ::1 GET /api/productos 304 - 562.838 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:26.771Z ::1 GET /api/productos/110 200 - 180.707 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:26.920Z ::1 GET /api/productos/110 304 - 142.907 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:28.210Z ::1 POST /api/carrito/items 500 - 173.564 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":4,"producto_id":110,"cantidad":1}
+2025-04-15T01:39:32.080Z ::1 POST /api/carrito/items 500 - 1123.222 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":4,"producto_id":110,"cantidad":1}
+2025-04-15T01:39:35.980Z ::1 GET /api/carrito/4 200 - 1714.384 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:36.816Z ::1 GET /api/carrito/4 304 - 832.067 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:37.327Z ::1 GET /api/carrito/4 304 - 507.184 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:37.654Z ::1 GET /api/carrito/4 304 - 323.564 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:41.719Z ::1 DELETE /api/carrito/4/items 200 - 205.635 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:44.061Z ::1 GET /api/productos 304 - 2537.786 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:44.529Z ::1 GET /api/productos 304 - 462.520 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:45.139Z ::1 GET /api/productos 304 - 605.832 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:45.610Z ::1 GET /api/productos 304 - 465.891 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:48.396Z ::1 GET /api/productos/48 304 - 122.711 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:48.580Z ::1 GET /api/productos/48 304 - 179.279 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:39:55.627Z - 🛑 Servidor detenido manualmente
+2025-04-15T01:39:58.106Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:39:58.113Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:40:24.050Z - 🛑 Servidor detenido manualmente
+2025-04-15T01:40:26.237Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:40:26.240Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:41:18.489Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:41:18.497Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:42:06.512Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:42:06.516Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:42:08.972Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:42:08.978Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:45:48.729Z ::1 POST /api/carrito/items 500 - 359270.355 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":4,"producto_id":48,"cantidad":1}
+2025-04-15T01:45:50.467Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:46:09.709Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:46:09.715Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:46:26.346Z ::1 GET /api/productos 200 - 1560.344 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:46:27.341Z ::1 GET /api/productos 304 - 989.002 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:46:27.958Z ::1 GET /api/productos 304 - 610.917 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:46:28.779Z ::1 GET /api/productos 304 - 815.952 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:46:53.540Z ::1 POST /api/auth/login 200 - 1428.005 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"email":"sandypardo24@gmail.com","password":"******"}
+2025-04-15T01:46:53.840Z ::1 GET /api/auth/me 200 - 136.215 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:46:53.971Z ::1 GET /api/auth/me 304 - 127.164 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:46:56.700Z ::1 GET /api/productos/usuario/5 200 - 2847.371 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:46:57.172Z ::1 GET /api/productos/usuario/5 304 - 465.758 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:02.556Z ::1 DELETE /api/productos/43 200 - 206.355 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:08.013Z ::1 DELETE /api/productos/44 200 - 151.983 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:13.212Z ::1 GET /api/productos 200 - 980.224 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:13.832Z ::1 GET /api/productos 304 - 614.238 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:14.439Z ::1 GET /api/productos 304 - 602.561 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:15.260Z ::1 GET /api/productos 304 - 816.575 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:16.447Z ::1 GET /api/productos/36 200 - 146.805 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:16.599Z ::1 GET /api/productos/36 304 - 148.605 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:18.135Z ::1 POST /api/carrito/crear 201 - 184.737 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:18.329Z ::1 POST /api/carrito/items 200 - 179.059 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":36,"cantidad":1}
+2025-04-15T01:47:21.046Z ::1 GET /api/productos 304 - 707.209 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:21.710Z ::1 GET /api/productos 304 - 659.265 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:22.465Z ::1 GET /api/productos 304 - 749.907 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:23.145Z ::1 GET /api/productos 304 - 673.905 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:24.092Z ::1 GET /api/productos/97 200 - 142.531 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:24.240Z ::1 GET /api/productos/97 304 - 144.864 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:25.289Z ::1 POST /api/carrito/items 200 - 217.516 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":97,"cantidad":1}
+2025-04-15T01:47:27.487Z ::1 GET /api/productos 304 - 862.014 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:28.064Z ::1 GET /api/productos 304 - 570.752 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:28.679Z ::1 GET /api/productos 304 - 610.219 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:29.226Z ::1 GET /api/productos 304 - 541.856 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:31.270Z ::1 GET /api/productos/95 200 - 142.215 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:31.416Z ::1 GET /api/productos/95 304 - 142.009 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:32.699Z ::1 POST /api/carrito/items 200 - 142.522 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":95,"cantidad":1}
+2025-04-15T01:47:35.735Z ::1 GET /api/carrito/5 200 - 214.721 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:35.879Z ::1 GET /api/carrito/5 304 - 141.116 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:36.041Z ::1 GET /api/carrito/5 304 - 157.517 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:36.246Z ::1 GET /api/carrito/5 304 - 202.100 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:45.579Z ::1 GET /api/productos 304 - 1041.634 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:46.125Z ::1 GET /api/productos 304 - 541.224 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:46.698Z ::1 GET /api/productos 304 - 568.289 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:47.315Z ::1 GET /api/productos 304 - 610.189 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:50.043Z ::1 GET /api/productos/36 304 - 142.389 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:50.193Z ::1 GET /api/productos/36 304 - 146.632 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:51.811Z ::1 POST /api/carrito/items 200 - 208.666 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":36,"cantidad":1}
+2025-04-15T01:47:57.136Z ::1 GET /api/carrito/5 200 - 194.804 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:57.281Z ::1 GET /api/carrito/5 304 - 141.161 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:57.443Z ::1 GET /api/carrito/5 304 - 159.547 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:47:57.652Z ::1 GET /api/carrito/5 304 - 203.686 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:48:18.845Z ::1 DELETE /api/carrito/item 200 - 1557.927 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":36}
+2025-04-15T01:50:00.870Z ::1 GET /api/auth/me 304 - 1349.302 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:00.884Z ::1 GET /api/carrito/5 200 - 1360.080 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:01.047Z ::1 GET /api/auth/me 304 - 171.214 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:01.944Z ::1 GET /api/productos/usuario/5 200 - 1056.675 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:02.091Z ::1 GET /api/carrito/5 304 - 1200.653 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:02.237Z ::1 GET /api/carrito/5 304 - 141.594 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:02.384Z ::1 GET /api/carrito/5 304 - 142.192 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:02.516Z ::1 GET /api/productos/usuario/5 304 - 568.498 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:05.659Z ::1 GET /api/productos 304 - 1172.428 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:06.411Z ::1 GET /api/productos 304 - 747.267 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:07.089Z ::1 GET /api/productos 304 - 673.353 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:07.603Z ::1 GET /api/productos 304 - 508.597 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:46.858Z - ✅ Conexión a la base de datos establecida
+2025-04-15T01:50:46.862Z - 🚀 Servidor corriendo en puerto 3000
+2025-04-15T01:50:54.090Z ::1 GET /api/carrito/5 304 - 1290.987 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:54.296Z ::1 GET /api/carrito/5 304 - 199.299 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:54.497Z ::1 GET /api/carrito/5 304 - 196.217 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:54.808Z ::1 GET /api/carrito/5 304 - 306.470 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:55.250Z ::1 GET /api/productos 304 - 2454.488 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:55.895Z ::1 GET /api/productos 304 - 639.718 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:56.532Z ::1 GET /api/productos 304 - 633.118 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:50:57.239Z ::1 GET /api/productos 304 - 703.384 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:51:02.076Z ::1 GET /api/productos/49 200 - 184.095 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:51:02.277Z ::1 GET /api/productos/49 304 - 196.919 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:51:04.010Z ::1 POST /api/carrito/items 200 - 134.648 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":49,"cantidad":1}
+2025-04-15T01:51:05.688Z ::1 POST /api/carrito/items 200 - 134.166 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":49,"cantidad":1}
+2025-04-15T01:51:08.626Z ::1 POST /api/carrito/items 200 - 212.644 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":49,"cantidad":1}
+2025-04-15T01:51:10.367Z ::1 GET /api/carrito/5 200 - 249.095 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:51:10.572Z ::1 GET /api/carrito/5 304 - 199.757 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:51:10.713Z ::1 GET /api/carrito/5 304 - 137.224 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:51:10.879Z ::1 GET /api/carrito/5 304 - 161.028 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:51:13.643Z ::1 DELETE /api/carrito/item 200 - 416.049 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":49}
+2025-04-15T01:53:04.167Z ::1 GET /api/carrito/5 200 - 1336.265 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:53:04.339Z ::1 GET /api/carrito/5 304 - 168.572 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:53:04.475Z ::1 GET /api/carrito/5 304 - 130.817 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:53:04.645Z ::1 GET /api/carrito/5 304 - 165.723 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:53:52.776Z ::1 GET /api/carrito/5 304 - 1330.772 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:53:52.924Z ::1 GET /api/carrito/5 304 - 142.860 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:53:53.073Z ::1 GET /api/carrito/5 304 - 145.291 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:53:53.217Z ::1 GET /api/carrito/5 304 - 140.941 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:11.103Z ::1 GET /api/carrito/5 304 - 1404.293 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:11.309Z ::1 GET /api/carrito/5 304 - 201.617 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:11.514Z ::1 GET /api/carrito/5 304 - 201.908 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:11.719Z ::1 GET /api/carrito/5 304 - 200.320 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:23.904Z ::1 GET /api/carrito/5 304 - 1287.313 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:24.211Z ::1 GET /api/carrito/5 304 - 300.212 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:24.416Z ::1 GET /api/carrito/5 304 - 200.918 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:24.621Z ::1 GET /api/carrito/5 304 - 199.778 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:32.300Z ::1 GET /api/carrito/5 304 - 234.644 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:32.448Z ::1 GET /api/carrito/5 304 - 144.180 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:32.608Z ::1 GET /api/carrito/5 304 - 155.760 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:32.812Z ::1 GET /api/carrito/5 304 - 200.438 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:34.861Z ::1 DELETE /api/carrito/item 200 - 297.449 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":49}
+2025-04-15T01:54:44.896Z ::1 DELETE /api/carrito/item 200 - 456.466 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":97}
+2025-04-15T01:54:47.559Z ::1 DELETE /api/carrito/item 200 - 388.732 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":49}
+2025-04-15T01:54:49.402Z ::1 DELETE /api/carrito/item 200 - 406.110 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":95}
+2025-04-15T01:54:57.131Z ::1 GET /api/productos 304 - 1207.373 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:57.579Z ::1 GET /api/productos 304 - 443.444 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:59.030Z ::1 GET /api/productos 304 - 1446.530 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:54:59.752Z ::1 GET /api/productos 304 - 705.120 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:01.997Z ::1 GET /api/productos/45 200 - 210.561 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:02.201Z ::1 GET /api/productos/45 304 - 198.828 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:03.637Z ::1 POST /api/carrito/items 200 - 146.228 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":45,"cantidad":1}
+2025-04-15T01:55:04.762Z ::1 POST /api/carrito/items 200 - 212.050 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":45,"cantidad":1}
+2025-04-15T01:55:11.322Z ::1 GET /api/productos 304 - 889.192 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:12.037Z ::1 GET /api/productos 304 - 701.737 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:12.854Z ::1 GET /api/productos 304 - 814.055 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:13.511Z ::1 GET /api/productos 304 - 651.938 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:25.242Z ::1 GET /api/productos/98 200 - 1610.954 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:25.396Z ::1 GET /api/productos/98 304 - 148.343 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:26.573Z ::1 POST /api/carrito/items 200 - 188.511 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":98,"cantidad":1}
+2025-04-15T01:55:28.421Z ::1 GET /api/carrito/5 200 - 181.834 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:28.621Z ::1 GET /api/carrito/5 304 - 196.503 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:28.827Z ::1 GET /api/carrito/5 304 - 202.724 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:29.032Z ::1 GET /api/carrito/5 304 - 201.588 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:39.376Z ::1 DELETE /api/carrito/item 200 - 442.458 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":45}
+2025-04-15T01:55:44.498Z ::1 DELETE /api/carrito/item 200 - 426.196 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":45}
+2025-04-15T01:55:46.172Z ::1 DELETE /api/carrito/item 200 - 340.151 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":98}
+2025-04-15T01:55:48.598Z ::1 GET /api/productos 304 - 1271.564 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:49.223Z ::1 GET /api/productos 304 - 619.645 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:49.824Z ::1 GET /api/productos 304 - 595.585 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:50.443Z ::1 GET /api/productos 304 - 614.188 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:51.298Z ::1 GET /api/auth/me 304 - 272.874 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:51.456Z ::1 GET /api/auth/me 304 - 154.591 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:52.589Z ::1 GET /api/carrito/5 200 - 1553.768 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:52.788Z ::1 GET /api/carrito/5 200 - 193.768 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:52.970Z ::1 GET /api/carrito/5 200 - 177.650 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:53.198Z ::1 GET /api/carrito/5 200 - 224.651 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:53.816Z ::1 GET /api/productos/usuario/5 304 - 2504.177 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:54.231Z ::1 GET /api/productos/usuario/5 304 - 409.116 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:55.143Z ::1 GET /api/auth/me 304 - 164.965 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:55.348Z ::1 GET /api/auth/me 304 - 200.262 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:56.130Z ::1 GET /api/productos/usuario/5 304 - 976.637 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:55:56.675Z ::1 GET /api/productos/usuario/5 304 - 541.350 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:56:10.503Z ::1 GET /api/productos/97 304 - 2774.424 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:56:10.657Z ::1 GET /api/productos/97 304 - 150.407 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:56:31.254Z ::1 PUT /api/productos/97 200 - 1427.095 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"nombre":"Minicomponente LG XBOOM2","descripcion":"Potente sonido de 300W con bluetooth5.1","precio":"160000","condicion":"Nuevo","ubicacion":"Rancagua","imagenes":"[\"/images/xboom.jpg\"]"}
+2025-04-15T01:56:35.030Z ::1 GET /api/auth/me 304 - 134.830 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:56:35.167Z ::1 GET /api/auth/me 304 - 134.035 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:56:37.440Z ::1 GET /api/productos/usuario/5 200 - 2395.573 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:56:38.007Z ::1 GET /api/productos/usuario/5 304 - 562.668 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:10.920Z ::1 DELETE /api/productos/47 200 - 1534.150 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:15.630Z ::1 GET /api/auth/me 304 - 233.468 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:15.837Z ::1 GET /api/auth/me 304 - 204.375 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:16.805Z ::1 GET /api/carrito/5 200 - 1402.164 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:16.962Z ::1 GET /api/auth/me 304 - 163.543 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:16.963Z ::1 GET /api/carrito/5 200 - 152.705 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:16.977Z ::1 POST /api/logs/logout 200 - 1.517 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"user":"sandypardo24@gmail.com"}
+2025-04-15T01:57:17.142Z ::1 GET /api/carrito/5 200 - 175.534 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:17.285Z ::1 GET /api/carrito/5 200 - 140.242 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:17.586Z ::1 GET /api/productos/usuario/5 200 - 1945.262 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:18.304Z ::1 GET /api/productos/usuario/5 304 - 712.965 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:21.417Z ::1 GET /api/productos 200 - 770.088 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:22.396Z ::1 GET /api/productos 304 - 971.814 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:23.492Z ::1 GET /api/productos 304 - 1091.105 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:23.822Z ::1 GET /api/productos/51 200 - 140.599 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:23.972Z ::1 GET /api/productos 304 - 476.724 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:23.974Z ::1 GET /api/productos/51 304 - 148.268 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T01:57:24.927Z ::1 POST /api/carrito/items 200 - 197.798 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":51,"cantidad":1}
+2025-04-15T01:57:29.864Z ::1 POST /api/carrito/items 200 - 187.921 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":51,"cantidad":1}
+2025-04-15T02:00:40.533Z ::1 GET /api/carrito/5 200 - 1492.448 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:00:40.743Z ::1 GET /api/productos/51 304 - 1701.505 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:00:40.744Z ::1 GET /api/carrito/5 200 - 206.575 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:00:40.942Z ::1 GET /api/carrito/5 200 - 193.321 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:00:40.943Z ::1 GET /api/productos/51 304 - 193.189 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:00:41.079Z ::1 GET /api/carrito/5 200 - 132.352 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:00:43.092Z ::1 POST /api/carrito/items 200 - 178.027 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":51,"cantidad":1}
+2025-04-15T02:04:45.986Z ::1 POST /api/carrito/items 200 - 1573.585 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":51,"cantidad":1}
+2025-04-15T02:04:47.469Z ::1 GET /api/carrito/5 200 - 133.381 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:04:47.615Z ::1 GET /api/carrito/5 304 - 141.409 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:04:47.829Z ::1 GET /api/carrito/5 304 - 210.321 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:04:48.034Z ::1 GET /api/carrito/5 304 - 201.002 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:00.516Z ::1 POST /api/auth/login 200 - 1619.815 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"email":"sandypardo24@gmail.com","password":"******"}
+2025-04-15T02:05:00.732Z ::1 GET /api/auth/me 304 - 205.670 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:00.936Z ::1 PUT /api/carrito/asociar 200 - 189.414 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":"5","usuario_id":5}
+2025-04-15T02:05:01.215Z ::1 GET /api/auth/me 304 - 133.398 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:01.352Z ::1 GET /api/auth/me 304 - 133.358 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:04.319Z ::1 GET /api/productos/usuario/5 304 - 3092.888 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:05.258Z ::1 GET /api/productos/usuario/5 304 - 932.711 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:06.378Z ::1 GET /api/carrito/5 200 - 139.301 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:06.569Z ::1 GET /api/carrito/5 304 - 186.838 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:06.773Z ::1 GET /api/carrito/5 304 - 199.897 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:06.978Z ::1 GET /api/carrito/5 304 - 200.373 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:11.177Z ::1 DELETE /api/carrito/item 200 - 436.930 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":51}
+2025-04-15T02:05:13.020Z ::1 DELETE /api/carrito/item 200 - 345.602 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":51}
+2025-04-15T02:05:16.210Z ::1 GET /api/productos 304 - 783.505 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:16.651Z ::1 GET /api/productos 304 - 435.293 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:17.124Z ::1 GET /api/productos 304 - 468.769 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:17.854Z ::1 GET /api/productos 304 - 724.881 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:55.209Z ::1 GET /api/productos/83 200 - 1192.462 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:55.413Z ::1 GET /api/productos/83 304 - 199.845 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:56.437Z ::1 POST /api/carrito/items 200 - 196.670 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":83,"cantidad":1}
+2025-04-15T02:05:57.873Z ::1 GET /api/carrito/5 200 - 223.643 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:58.070Z ::1 GET /api/carrito/5 304 - 191.914 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:58.281Z ::1 GET /api/carrito/5 304 - 207.781 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:05:58.489Z ::1 GET /api/carrito/5 304 - 203.279 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:03.822Z ::1 GET /api/productos 304 - 1170.282 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:04.433Z ::1 GET /api/productos 304 - 605.112 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:05.288Z ::1 GET /api/productos/67 200 - 144.597 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:05.433Z ::1 GET /api/productos/67 304 - 141.517 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:06.575Z ::1 POST /api/carrito/items 200 - 192.616 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":67,"cantidad":1}
+2025-04-15T02:06:08.521Z ::1 POST /api/carrito/items 200 - 201.562 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":67,"cantidad":1}
+2025-04-15T02:06:11.090Z ::1 GET /api/productos 304 - 1043.693 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:11.706Z ::1 GET /api/productos 304 - 609.594 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:12.320Z ::1 GET /api/productos 304 - 610.106 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:12.832Z ::1 GET /api/productos 304 - 506.384 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:17.108Z ::1 GET /api/productos/95 304 - 141.852 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:17.254Z ::1 GET /api/productos/95 304 - 142.994 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:18.249Z ::1 POST /api/carrito/items 200 - 174.610 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":95,"cantidad":1}
+2025-04-15T02:06:19.989Z ::1 GET /api/carrito/5 200 - 156.534 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:20.194Z ::1 GET /api/carrito/5 304 - 202.166 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:20.399Z ::1 GET /api/carrito/5 304 - 201.561 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:06:20.604Z ::1 GET /api/carrito/5 304 - 200.991 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:06.799Z ::1 GET /api/carrito/5 304 - 1476.182 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:06.948Z ::1 GET /api/carrito/5 304 - 143.423 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:07.106Z ::1 GET /api/carrito/5 304 - 154.209 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:07.312Z ::1 GET /api/carrito/5 304 - 201.523 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:17.141Z ::1 DELETE /api/carrito/item 200 - 380.579 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"carrito_id":5,"producto_id":83}
+2025-04-15T02:09:20.113Z ::1 GET /api/productos 304 - 1116.782 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:20.936Z ::1 GET /api/productos 304 - 817.935 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:21.031Z ::1 GET /api/productos 200 - - ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:21.036Z ::1 GET /api/productos 200 - - ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:21.754Z ::1 GET /api/carrito/5 200 - 165.830 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:21.954Z ::1 GET /api/carrito/5 304 - 195.859 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:22.161Z ::1 GET /api/carrito/5 304 - 203.334 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:22.307Z ::1 GET /api/carrito/5 304 - 140.711 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:24.719Z ::1 DELETE /api/carrito/5/items 200 - 184.310 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:25.478Z ::1 GET /api/productos 200 - 930.878 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:25.775Z ::1 GET /api/productos 304 - 292.222 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:26.479Z ::1 GET /api/productos 304 - 698.191 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:28.925Z ::1 GET /api/productos 304 - 2441.791 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:32.501Z ::1 GET /api/auth/me 304 - 189.219 ms user:5 - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:32.514Z ::1 POST /api/logs/logout 200 - 0.721 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{"user":"sandypardo24@gmail.com"}
+2025-04-15T02:09:35.759Z ::1 GET /api/productos 304 - 887.231 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:36.376Z ::1 GET /api/productos 304 - 610.735 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:37.216Z ::1 GET /api/productos 304 - 835.204 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:37.707Z ::1 GET /api/productos 304 - 486.717 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:38.280Z ::1 GET /api/productos 304 - 568.263 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:38.736Z ::1 GET /api/productos 304 - 452.215 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:09:46.996Z ::1 GET /api/productos 304 - 702.004 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:10:07.328Z ::1 GET /api/productos 304 - 3005.399 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:10:08.114Z ::1 GET /api/productos 304 - 781.962 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:10:08.552Z ::1 GET /api/productos 304 - 433.998 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:10:09.170Z ::1 GET /api/productos 304 - 612.387 ms user:anonymous - agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 body:{}
+2025-04-15T02:10:16.147Z - 🛑 Servidor detenido manualmente

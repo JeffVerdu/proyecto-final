@@ -98,7 +98,19 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
       await api.delete("/carrito/item", {
         data: { carrito_id: carritoId, producto_id },
       });
-      setItems(prev => prev.filter(i => i.producto_id !== producto_id));
+      setItems((prev) => {
+        return prev
+          .map((item) => {
+            if (item.producto_id === producto_id) {
+              if (item.cantidad > 1) {
+                return { ...item, cantidad: item.cantidad - 1 };
+              }
+              return null;
+            }
+            return item;
+          })
+          .filter((item): item is CartItem => item !== null);
+      });
     } catch (err) {
       console.error("Error al eliminar del carrito:", err);
     }

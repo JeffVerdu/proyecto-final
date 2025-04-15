@@ -14,8 +14,7 @@ import CreatePostPage from "@/pages/CreatePost";
 import CategoryPage from "@/pages/CategoryPage";
 import EditarProductoPage from "@/pages/EditarProductoPage";
 import CartPage from "@/pages/CartPage";
-
-// import ProtectedRoute from "@/config/ProtectedRoute";
+import ProtectedRoute from "@/config/ProtectedRoute";
 
 function App() {
   return (
@@ -33,12 +32,9 @@ function App() {
         element={<CategoryPage key={location.pathname} />}
         path="/categories/:category"
       />
-      <Route element={<Profile />} path="/profile" />
-      <Route element={<GalleryPage />} path="/gallery" />
-      <Route element={<CreatePostPage />} path="/post/new" />
 
       {/* Protegidas */}
-      {/* <Route
+      <Route
         path="/profile"
         element={
           <ProtectedRoute>
@@ -47,7 +43,7 @@ function App() {
         }
       />
       <Route
-        path="/my-gallery"
+        path="/gallery"
         element={
           <ProtectedRoute>
             <GalleryPage />
@@ -61,9 +57,6 @@ function App() {
             <CreatePostPage />
           </ProtectedRoute>
         }
-<<<<<<< Updated upstream
-      /> */}
-=======
       />
       <Route
         path="/editar/:id"
@@ -81,7 +74,6 @@ function App() {
           </ProtectedRoute>
         }
       />
->>>>>>> Stashed changes
     </Routes>
   );
 }

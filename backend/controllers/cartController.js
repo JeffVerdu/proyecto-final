@@ -15,9 +15,13 @@ exports.agregarItem = async (req, res) => {
     }
 
     await pool.query(
-      'INSERT INTO carrito_items (carrito_id, producto_id, cantidad) VALUES ($1, $2, $3)',
+      `INSERT INTO carrito_items (carrito_id, producto_id, cantidad)
+       VALUES ($1, $2, $3)
+       ON CONFLICT (carrito_id, producto_id)
+       DO UPDATE SET cantidad = carrito_items.cantidad + EXCLUDED.cantidad`,
       [newCarritoId, producto_id, cantidad]
     );
+    
 
     res.status(200).json({ mensaje: 'Item agregado', carrito_id: newCarritoId });
   } catch (err) {
@@ -30,33 +34,74 @@ exports.agregarItem = async (req, res) => {
 exports.verCarrito = async (req, res) => {
   const { id } = req.params;
   try {
-    const result = await pool.query(`SELECT c.id AS carrito_id, c.usuario_id, c.estado, c.fecha_creacion,
-      json_agg(json_build_object('producto_id', p.id, 'nombre', p.nombre, 'cantidad', ci.cantidad, 'precio', p.precio)) AS items
+    const result = await pool.query(`
+      SELECT 
+        c.id AS carrito_id, 
+        c.usuario_id, 
+        c.estado, 
+        c.fecha_creacion,
+        json_agg(
+          json_build_object(
+            'producto_id', p.id,
+            'nombre', p.nombre,
+            'cantidad', ci.cantidad,
+            'precio', p.precio,
+            'imagenes', p.imagenes
+          )
+        ) AS items
       FROM carritos c
       JOIN carrito_items ci ON c.id = ci.carrito_id
       JOIN productos p ON p.id = ci.producto_id
       WHERE c.id = $1
-      GROUP BY c.id`, [id]);
+      GROUP BY c.id
+    `, [id]);
+
     res.status(200).json(result.rows[0]);
   } catch (err) {
+    console.error("Error en verCarrito:", err);
     res.status(500).json({ error: 'Error en el servidor' });
   }
 };
+
 
 exports.eliminarPorProducto = async (req, res) => {
   const { carrito_id, producto_id } = req.body;
 
   try {
-    await pool.query(
-      'DELETE FROM carrito_items WHERE carrito_id = $1 AND producto_id = $2',
+    // Obtener la cantidad actual
+    const result = await pool.query(
+      'SELECT cantidad FROM carrito_items WHERE carrito_id = $1 AND producto_id = $2',
       [carrito_id, producto_id]
     );
-    res.status(200).json({ mensaje: 'Producto eliminado del carrito' });
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: "Producto no encontrado en el carrito" });
+    }
+
+    const cantidadActual = result.rows[0].cantidad;
+
+    if (cantidadActual > 1) {
+      // Restar uno si hay más de 1
+      await pool.query(
+        'UPDATE carrito_items SET cantidad = cantidad - 1 WHERE carrito_id = $1 AND producto_id = $2',
+        [carrito_id, producto_id]
+      );
+    } else {
+      // Eliminar si solo queda 1
+      await pool.query(
+        'DELETE FROM carrito_items WHERE carrito_id = $1 AND producto_id = $2',
+        [carrito_id, producto_id]
+      );
+    }
+
+    res.status(200).json({ mensaje: 'Producto actualizado o eliminado del carrito' });
+
   } catch (err) {
     console.error("Error al eliminar producto del carrito:", err);
     res.status(500).json({ error: 'Error al eliminar producto del carrito' });
   }
 };
+
 
 
 exports.asociarCarritoAUsuario = async (req, res) => {

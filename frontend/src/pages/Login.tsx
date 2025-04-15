@@ -21,16 +21,32 @@ export default function Login() {
     setLoading(true);
 
     try {
-      // const response = await api.post("/auth/login", {
-      //   email,
-      //   password,
-      // });
+      const response = await api.post("/auth/login", {
+        email,
+        password,
+       });
 
-      // const { token } = response.data;
+       const { token } = response.data;
+       if (!token) throw new Error("Token no recibido desde el servidor");
 
-      // if (!token) throw new Error("Token no recibido desde el servidor");
+       localStorage.setItem("token", token);
 
-      // localStorage.setItem("token", token);
+       const carrito_id = localStorage.getItem("carrito_id");
+        if (carrito_id) {
+          try {
+            const userInfo = await api.get("/auth/me");
+            const usuario_id = userInfo.data.id;
+
+            await api.put("/carrito/asociar", {
+              carrito_id,
+              usuario_id,
+            });
+
+            console.log("🛒 Carrito anónimo asociado al usuario logueado");
+          } catch (error) {
+            console.error("❌ Error asociando carrito:", error);
+          }
+        }
 
       showToast({
         title: "Inicio de sesión exitoso",

@@ -11,36 +11,17 @@ export default function ProductPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-<<<<<<< Updated upstream
-    // api.get(`/productos/${id}`)
-    //   .then((res) => {
-    //     setProduct(res.data);
-    //   })
-    //   .catch((err) => {
-    //     console.error("Error al cargar producto:", err);
-    //     setProduct(null);
-    //   })
-    //   .finally(() => {
-    //     setLoading(false);
-    //   });
+    if (!id) return;
 
-    fetch(`/data/products.json`)
-      .then((res) => res.json())
-      .then((data) => {
-        const foundProduct = data.find((p: Product) => p.id === Number(id));
-        if (foundProduct) {
-          setProduct(foundProduct);
-        } else {
-          setProduct(null);
-        }
-=======
-    api.get(`/productos/${id}`)
+    api
+      .get(`/productos/${id}`)
       .then((res) => {
         const p = res.data;
-        p.imagenes = typeof p.imagenes === "string" ? JSON.parse(p.imagenes) : p.imagenes;
-
+        p.imagenes =
+          typeof p.imagenes === "string"
+            ? JSON.parse(p.imagenes)
+            : p.imagenes || [];
         setProduct(p);
->>>>>>> Stashed changes
       })
       .catch((err) => {
         console.error("Error al cargar producto:", err);
