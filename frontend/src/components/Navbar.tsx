@@ -18,11 +18,13 @@ import LogoutButton from "@/components/LogoutButton";
 import DropdownButton from "./DropdownButton";
 import { useEffect, useState } from "react";
 import { useSearchStore } from "@/store/useSearchStore";
+import { useCart } from "@/context/CartContext";
 
 export const Navbar = () => {
   const [options, setOptions] = useState([]);
   const location = useLocation();
 
+  const { items } = useCart();
   const { term, setTerm } = useSearchStore();
 
   useEffect(() => {
@@ -34,7 +36,6 @@ export const Navbar = () => {
             category.title
         );
         setOptions(categories);
-        console.log("Categories fetched:", categories);
       })
       .catch((error) => console.error("Error fetching categories:", error));
   }, []);
@@ -119,6 +120,19 @@ export const Navbar = () => {
             </Button>
           </Link>
           <LogoutButton />
+          <Link href="/carrito" className="relative">
+            <Button
+              aria-label="Ver carrito"
+              className="bg-white text-[#3E3F5B] font-semibold relative overflow-visible"
+            >
+              🛒
+              {items.length > 0 && (
+                <span className="absolute top-0 right-0 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full translate-x-1/2 -translate-y-1/2">
+                  {items.length}
+                </span>
+              )}
+            </Button>
+          </Link>
         </NavbarContent>
       ) : (
         <NavbarContent className="hidden sm:flex gap-4" justify="end">
@@ -150,8 +164,8 @@ export const Navbar = () => {
                   index === 2
                     ? "primary"
                     : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
+                    ? "danger"
+                    : "foreground"
                 }
                 href={item.href}
                 size="lg"

@@ -1,6 +1,7 @@
 import { Product } from "@/types";
-import ProductCard from "./ProductCard";
+import ProductCard from "@/components/ProductCard";
 import { useEffect, useState } from "react";
+import api from "@/config/axios";
 
 interface CategoryGridProps {
   category: string;
@@ -13,19 +14,15 @@ const CategoryGrid = ({ category }: CategoryGridProps) => {
   useEffect(() => {
     setIsLoading(true);
 
-    fetch("/data/products.json")
-      .then((res) => res.json())
-      .then((data: Product[]) => {
-        const filtered = data.filter(
-          (p) => p.category.toLowerCase() === category?.toLowerCase()
+    api.get("/productos")
+      .then((res) => {
+        const filtered = res.data.filter(
+          (p: Product) => p.categoria?.toLowerCase() === category?.toLowerCase()
         );
-
-        setTimeout(() => {
-          setProducts(filtered);
-          setIsLoading(false);
-        }, 1200);
+        setProducts(filtered);
       })
-      .catch((err) => console.error("Error al cargar productos:", err));
+      .catch((err) => console.error("Error al cargar productos:", err))
+      .finally(() => setIsLoading(false));
   }, [category]);
 
   const skeletons = Array.from({ length: 5 }).map((_, i) => (

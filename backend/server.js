@@ -9,6 +9,16 @@ const pool = require('./config/db');
 const app = express();
 
 // Middlewares
+app.use((req, res, next) => {
+  const originalSend = res.send;
+  res.send = function (body) {
+    res.body = body;
+    return originalSend.call(this, body);
+  };
+  next();
+});
+
+
 app.use(cors({
   origin: "http://localhost:5173",
 }));
@@ -18,12 +28,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Logging: consola + archivo
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'logs/access.log'), { flags: 'a' });
-morgan.token('user', (req) => {
-  if (req.user) {
-    return `user:${req.user.id}`;
-  }
-  return 'user:anonymous';
-});
+morgan.token('user', (req) => req.user ? `user:${req.user.id}` : 'user:anonymous');
 
 morgan.token('date', () => {
   return new Date().toISOString();
@@ -56,9 +61,8 @@ morgan.token('body', (req) => {
 });
 
 morgan.token('response', (req, res) => {
-  return JSON.stringify(res.body);
-}
-);
+  return typeof res.body === 'object' ? JSON.stringify(res.body) : res.body;
+});
 
 const customFormat = ':date :remote-addr :method :url :status - :response-time ms :user - agent::user-agent body::body';
 app.use(morgan(customFormat, {

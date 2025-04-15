@@ -7,13 +7,13 @@ import {
   Mail,
   MapPin,
   Calendar,
-  Briefcase,
-  LinkIcon,
 } from "lucide-react";
 import LogoutButton from "@/components/LogoutButton";
 import { Link } from "react-router-dom";
+import useAuthCheck from "@/hooks/useAuthCheck";
 
 export default function ProfilePage() {
+  useAuthCheck();
   const [user, setUser] = useState<any>(null);
   const [misProductos, setMisProductos] = useState<Producto[]>([]);
 
@@ -41,6 +41,19 @@ export default function ProfilePage() {
 
     fetchUser();
   }, []);
+
+  const handleEliminar = async (id: number) => {
+    const confirmar = confirm("¿Estás seguro de que quieres eliminar esta publicación?");
+    if (!confirmar) return;
+
+    try {
+      await api.delete(`/productos/${id}`);
+      setMisProductos((prev) => prev.filter((prod) => prod.id !== id));
+    } catch (error) {
+      console.error("Error al eliminar producto:", error);
+      alert("Ocurrió un error al eliminar la publicación.");
+    }
+  };
 
   const getImagenPrincipal = (imagenes: any): string => {
     try {
@@ -86,63 +99,58 @@ export default function ProfilePage() {
 
                 <div className="mt-6 space-y-4">
                   <div className="flex items-center gap-3">
-                    <Mail className="h-5 w-5 text-[#ACD3A8] dark:text-[#ACD3A8]" />
+                    <Mail className="h-5 w-5 text-[#ACD3A8]" />
                     <span className="text-[#3E3F5B]">
                       {user ? user.email : "Cargando..."}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-[#ACD3A8] dark:text-[#ACD3A8]" />
+                    <MapPin className="h-5 w-5 text-[#ACD3A8]" />
                     <span className="text-[#3E3F5B]">San Francisco, CA</span>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <Calendar className="h-5 w-5 text-[#ACD3A8] dark:text-[#ACD3A8]" />
+                    <Calendar className="h-5 w-5 text-[#ACD3A8]" />
                     <span className="text-[#3E3F5B]">Joined January 2023</span>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <Briefcase className="h-5 w-5 text-[#ACD3A8] dark:text-[#ACD3A8]" />
-                    <span className="text-[#3E3F5B]">
-                      {user ? user.perfil : "Cargando..."}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <LinkIcon className="h-5 w-5 text-[#ACD3A8] dark:text-[#ACD3A8]" />
-                    <a href="#" className="text-[#3E3F5B] hover:underline">
-                      github.com/janedoe
-                    </a>
                   </div>
                 </div>
 
                 <div className="mt-8">
-                  <h3 className="text-lg font-semibold text-[#3E3F5B] dark:text-[#F6F1DE] mb-4">
+                  <Link
+                    to="/gallery"
+                    className="text-lg font-semibold text-[#3E3F5B] mb-4 hover:underline transition"
+                  >
                     Mis Publicaciones
-                  </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  </Link>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
                     {misProductos.map((prod) => (
-                      <Link
+                      <div
                         key={prod.id}
-                        to={`/producto/${prod.id}`}
-                        className="border rounded-xl p-4 bg-white hover:shadow-md transition"
+                        className="border rounded-xl p-4 bg-white hover:shadow-md transition flex flex-col"
                       >
-                        <img
-                          src={getImagenPrincipal(prod.imagenes)}
-                          alt={prod.nombre}
-                          className="w-full h-40 object-cover rounded mb-2"
-                        />
-                        <h4 className="font-bold text-[#3E3F5B] dark:text-[#F6F1DE]">
-                          {prod.nombre}
-                        </h4>
-                        <p className="text-sm text-[#8AB2A6]">${prod.precio}</p>
-                      </Link>
+                        <Link to={`/producto/${prod.id}`}>
+                          <img
+                            src={getImagenPrincipal(prod.imagenes)}
+                            alt={prod.nombre}
+                            className="w-full h-40 object-cover rounded mb-2"
+                          />
+                          <h4 className="font-bold text-[#3E3F5B]">{prod.nombre}</h4>
+                          <p className="text-sm text-[#8AB2A6]">${prod.precio}</p>
+                        </Link>
+
+                        <button
+                          onClick={() => handleEliminar(prod.id)}
+                          className="mt-2 text-sm bg-red-500 text-white rounded px-4 py-2 hover:bg-red-600 transition"
+                        >
+                          Eliminar publicación
+                        </button>
+                      </div>
                     ))}
                   </div>
                 </div>
 
-                {/* ➕ Botón Crear publicación */}
                 <div className="mt-10 flex justify-center">
                   <Link
                     to="/post/new"
@@ -152,7 +160,6 @@ export default function ProfilePage() {
                   </Link>
                 </div>
 
-                {/* 🔐 Botón de Cerrar Sesión */}
                 <div className="mt-10 flex justify-center">
                   <LogoutButton />
                 </div>
