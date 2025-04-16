@@ -1,4 +1,4 @@
-import { Link } from "@heroui/link";
+import { Link } from "@heroui/react";
 import { Input } from "@heroui/input";
 import {
   Navbar as HeroUINavbar,
@@ -19,7 +19,6 @@ import DropdownButton from "./DropdownButton";
 import { useEffect, useState } from "react";
 import { useSearchStore } from "@/store/useSearchStore";
 import { useCart } from "@/context/CartContext";
-import api from "@/config/axios";
 
 export const Navbar = () => {
   const [options, setOptions] = useState<string[]>([]);
@@ -113,25 +112,23 @@ export const Navbar = () => {
 
       {isLoggedIn ? (
         <NavbarContent className="hidden sm:flex gap-4" justify="end">
-          <Link href="/profile">
-            <Button className="bg-white text-[#3E3F5B] font-semibold">
-              Mi Perfil
-            </Button>
-          </Link>
+          <Button className="bg-white text-[#3E3F5B] font-semibold">
+            <Link href="/profile">Mi Perfil</Link>
+          </Button>
           <LogoutButton />
-          <Link href="/cart" className="relative">
-            <Button
-              aria-label="Ver carrito"
-              className="bg-white text-[#3E3F5B] font-semibold relative overflow-visible"
-            >
+          <Button
+            aria-label="Ver carrito"
+            className="bg-white text-[#3E3F5B] font-semibold relative overflow-visible"
+          >
+            <Link href="/cart">
               🛒
               {items.length > 0 && (
                 <span className="absolute top-0 right-0 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full translate-x-1/2 -translate-y-1/2">
                   {items.length}
                 </span>
               )}
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </NavbarContent>
       ) : (
         <NavbarContent className="hidden sm:flex gap-4" justify="end">

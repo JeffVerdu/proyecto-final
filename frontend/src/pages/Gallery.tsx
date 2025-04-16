@@ -6,6 +6,7 @@ import { Button } from "@heroui/button";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "@/config/axios"; // usamos tu cliente axios real
+import { Link } from "@heroui/react";
 
 export default function GalleryPage() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -18,7 +19,9 @@ export default function GalleryPage() {
         const userRes = await api.get("/auth/me");
         setUser(userRes.data);
 
-        const productosRes = await api.get(`/productos/usuario/${userRes.data.id}`);
+        const productosRes = await api.get(
+          `/productos/usuario/${userRes.data.id}`
+        );
         setProducts(productosRes.data);
       } catch (error) {
         console.error("Error al cargar perfil o productos:", error);
@@ -36,17 +39,17 @@ export default function GalleryPage() {
       console.error("Error al eliminar producto:", err);
       alert("Error al eliminar");
     }
-  };  
+  };
 
   const handleClick = () => {
-    navigate("/post");
+    navigate("/post/new");
   };
 
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="inline-block max-w-lg text-center justify-center">
-          <h1 className={title()}>My Gallery</h1>
+          <h1 className={title()}>Galería de publicaciones</h1>
         </div>
 
         <div className="w-full max-w-7xl mx-auto mt-8 px-4">
@@ -61,10 +64,13 @@ export default function GalleryPage() {
                   {user ? user.nombre : "Cargando..."}
                 </h2>
                 <p>
-                  <span className="font-medium">{products.length} publicaciones</span> ·{" "}
-                  <a href="/profile" className="hover:underline">
+                  <span className="font-medium">
+                    {products.length} publicaciones
+                  </span>{" "}
+                  ·{" "}
+                  <Link href="/profile" className="hover:underline">
                     Ver perfil
-                  </a>
+                  </Link>
                 </p>
               </div>
               <Button
@@ -77,7 +83,11 @@ export default function GalleryPage() {
             </div>
           </div>
 
-          <GalleryGrid products={products} userId={user?.id} onDelete={handleDelete} />
+          <GalleryGrid
+            products={products}
+            userId={user?.id}
+            onDelete={handleDelete}
+          />
 
           <div className="flex justify-center mt-10">
             <button className="px-6 py-2 bg-[#ACD3A8] hover:brightness-95 font-medium rounded-full transition-all ease-in duration-200">

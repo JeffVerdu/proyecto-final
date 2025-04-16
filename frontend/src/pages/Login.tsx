@@ -1,6 +1,6 @@
 import { Button } from "@heroui/button";
 import { Input } from "@heroui/input";
-import { Link } from "@heroui/link";
+import { Link } from "@heroui/react";
 import DefaultLayout from "@/layouts/Default";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -24,29 +24,29 @@ export default function Login() {
       const response = await api.post("/auth/login", {
         email,
         password,
-       });
+      });
 
-       const { token } = response.data;
-       if (!token) throw new Error("Token no recibido desde el servidor");
+      const { token } = response.data;
+      if (!token) throw new Error("Token no recibido desde el servidor");
 
-       localStorage.setItem("token", token);
+      localStorage.setItem("token", token);
 
-       const carrito_id = localStorage.getItem("carrito_id");
-        if (carrito_id) {
-          try {
-            const userInfo = await api.get("/auth/me");
-            const usuario_id = userInfo.data.id;
+      const carrito_id = localStorage.getItem("carrito_id");
+      if (carrito_id) {
+        try {
+          const userInfo = await api.get("/auth/me");
+          const usuario_id = userInfo.data.id;
 
-            await api.put("/carrito/asociar", {
-              carrito_id,
-              usuario_id,
-            });
+          await api.put("/carrito/asociar", {
+            carrito_id,
+            usuario_id,
+          });
 
-            console.log("🛒 Carrito anónimo asociado al usuario logueado");
-          } catch (error) {
-            console.error("❌ Error asociando carrito:", error);
-          }
+          console.log("🛒 Carrito anónimo asociado al usuario logueado");
+        } catch (error) {
+          console.error("❌ Error asociando carrito:", error);
         }
+      }
 
       showToast({
         title: "Inicio de sesión exitoso",

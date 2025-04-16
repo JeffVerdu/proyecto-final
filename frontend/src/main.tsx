@@ -10,13 +10,13 @@ import { ToastProvider } from "@heroui/react";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <CartProvider>
+    <CartProvider>
+      <BrowserRouter>
         <Provider>
           <ToastProvider placement={"top-center"} toastOffset={60} />
           <App />
         </Provider>
-      </CartProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </CartProvider>
   </React.StrictMode>
 );

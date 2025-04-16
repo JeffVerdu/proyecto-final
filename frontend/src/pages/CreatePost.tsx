@@ -261,7 +261,7 @@ export default function CreatePostPage() {
           <div className="text-right">
             <button
               type="submit"
-              className="px-6 py-2 bg-[#3E3F5B] text-white rounded hover:brightness-90 transition-all duration-200 ease-in-out disabled:opacity-50"
+              className="px-6 py-2 bg-[#ACD3A8] text-[#3E3F5B] font-semibold rounded hover:brightness-90 transition-all duration-200 ease-in-out disabled:opacity-50"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Publicando..." : "Publicar producto"}

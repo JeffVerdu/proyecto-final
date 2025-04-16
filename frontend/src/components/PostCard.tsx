@@ -26,7 +26,9 @@ export default function PostCard({ product, userId, onDelete }: Props) {
   };
 
   const formatearPrecio = (precio: any) =>
-    !isNaN(Number(precio)) ? `$${Number(precio).toLocaleString()}` : "Precio no disponible";
+    !isNaN(Number(precio))
+      ? `$${Number(precio).toLocaleString()}`
+      : "Precio no disponible";
 
   return (
     <div className="border rounded-xl p-4 bg-white hover:shadow-md transition flex flex-col">
@@ -36,17 +38,22 @@ export default function PostCard({ product, userId, onDelete }: Props) {
           alt={product.nombre}
           className="w-full h-40 object-cover rounded mb-2"
         />
-        <h4 className="font-bold text-[#3E3F5B] dark:text-[#F6F1DE]">{product.nombre}</h4>
-        <p className="text-sm text-[#8AB2A6]">{formatearPrecio(product.precio)}</p>
+        <h4 className="font-bold text-[#3E3F5B] dark:text-[#F6F1DE]">
+          {product.nombre}
+        </h4>
+        <p className="text-sm text-[#8AB2A6]">
+          {formatearPrecio(product.precio)}
+        </p>
 
         {/* 👇 Agregado: nombre del vendedor */}
         {product.nombre_usuario && (
           <p className="text-xs text-gray-500 mt-1">
-            Vendido por <span className="font-medium">{product.nombre_usuario}</span>
+            Vendido por{" "}
+            <span className="font-medium">{product.nombre_usuario}</span>
           </p>
         )}
 
-        <button className="mt-2 bg-[#3861FB] text-white py-2 rounded hover:bg-blue-700 transition w-full">
+        <button className="mt-2 bg-[#3E3F5B] text-white font-semibold py-2 rounded hover:brightness-105 transition w-full">
           Ver más
         </button>
       </Link>
@@ -55,13 +62,15 @@ export default function PostCard({ product, userId, onDelete }: Props) {
         <div className="flex gap-2 mt-3">
           <Link
             to={`/editar/${product.id}`}
-            className="flex-1 text-sm bg-blue-500 text-white rounded px-3 py-2 hover:bg-blue-600 transition text-center"
+            className="flex-1 text-sm bg-green-600 hover:bg-green-700 text-white rounded px-3 py-2 transition text-center"
           >
             Editar
           </Link>
           <button
             onClick={() => {
-              const confirmar = confirm("¿Estás seguro de eliminar esta publicación?");
+              const confirmar = confirm(
+                "¿Estás seguro de eliminar esta publicación?"
+              );
               if (confirmar) onDelete?.(product.id);
             }}
             className="flex-1 text-sm bg-red-500 text-white rounded px-3 py-2 hover:bg-red-600 transition"

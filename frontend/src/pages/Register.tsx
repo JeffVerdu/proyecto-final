@@ -1,6 +1,6 @@
 import { Button } from "@heroui/button";
 import { Input } from "@heroui/input";
-import { Link } from "@heroui/link";
+import { Link } from "@heroui/react";
 import DefaultLayout from "@/layouts/Default";
 import { useState } from "react";
 import api from "@/config/axios";

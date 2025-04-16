@@ -30,7 +30,7 @@ const ProductCategoryCarousel: React.FC<Props> = ({ category, products }) => {
       orientation="horizontal"
     >
       <div className="flex justify-between items-center">
-        <h2 className="text-xl font-bold">{category}</h2>
+        <h2 className="text-xl font-bold capitalize">{category}</h2>
         <button
           className="text-sm text-blue-600 font-medium"
           onClick={() => {
@@ -40,13 +40,20 @@ const ProductCategoryCarousel: React.FC<Props> = ({ category, products }) => {
           Ver más
         </button>
       </div>
+
       <div className="overflow-x-auto">
         <div className="flex gap-4 snap-x snap-mandatory py-4 px-8">
-          {isLoading
-            ? skeletons
-            : products.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
+          {isLoading ? (
+            skeletons
+          ) : products.length > 0 ? (
+            products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))
+          ) : (
+            <p className="text-gray-500 italic">
+              No hay productos en esta categoría.
+            </p>
+          )}
         </div>
       </div>
     </ScrollShadow>
