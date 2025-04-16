@@ -2,6 +2,7 @@ import { Product } from "@/types";
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { ScrollShadow } from "@heroui/react";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   category: string;
@@ -10,6 +11,7 @@ interface Props {
 
 const ProductCategoryCarousel: React.FC<Props> = ({ category, products }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsLoading(true);
@@ -17,6 +19,10 @@ const ProductCategoryCarousel: React.FC<Props> = ({ category, products }) => {
       setIsLoading(false);
     }, 1200);
   }, []);
+
+  const skeletons = Array.from({ length: 5 }).map((_, i) => (
+    <ProductCard key={`skeleton-${i}`} isLoading />
+  ));
 
   return (
     <ScrollShadow
@@ -28,7 +34,7 @@ const ProductCategoryCarousel: React.FC<Props> = ({ category, products }) => {
         <button
           className="text-sm text-blue-600 font-medium"
           onClick={() => {
-            /* Add action here */
+            navigate(`/categories/${category}`);
           }}
         >
           Ver más
@@ -36,13 +42,11 @@ const ProductCategoryCarousel: React.FC<Props> = ({ category, products }) => {
       </div>
       <div className="overflow-x-auto">
         <div className="flex gap-4 snap-x snap-mandatory py-4 px-8">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              isLoading={isLoading}
-            />
-          ))}
+          {isLoading
+            ? skeletons
+            : products.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
         </div>
       </div>
     </ScrollShadow>

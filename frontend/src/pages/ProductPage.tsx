@@ -22,6 +22,7 @@ export default function ProductPage() {
             ? JSON.parse(p.imagenes)
             : p.imagenes || [];
         setProduct(p);
+        console.log("Producto:", p);
       })
       .catch((err) => {
         console.error("Error al cargar producto:", err);

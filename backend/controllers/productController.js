@@ -1,22 +1,41 @@
-const pool = require('../config/db');
+const pool = require("../config/db");
+const { uploadToCloudinary } = require("../utils/uploadToCloudinary");
 
 exports.crearProducto = async (req, res) => {
-  const { nombre, descripcion, imagenes, precio, condicion, ubicacion } = req.body;
+  const { nombre, descripcion, precio, condicion, ubicacion, categoria } =
+    req.body;
   const usuario_id = req.user.id;
+  const files = req.files || [];
 
   try {
+    const urls = [];
+
+    for (const file of files) {
+      const url = await uploadToCloudinary(file.buffer, Date.now());
+      urls.push(url);
+    }
+
     const result = await pool.query(
-      'INSERT INTO productos (nombre, descripcion, imagenes, precio, condicion, ubicacion, usuario_id) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id',
-      [nombre, descripcion, JSON.stringify(imagenes), precio, condicion, ubicacion, usuario_id]
+      `INSERT INTO productos (nombre, descripcion, imagenes, precio, condicion, ubicacion, usuario_id, categoria)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id`,
+      [
+        nombre,
+        descripcion,
+        JSON.stringify(urls),
+        precio,
+        condicion,
+        ubicacion,
+        usuario_id,
+        categoria,
+      ]
     );
 
-    res.status(201).json({ mensaje: 'Producto creado', id: result.rows[0].id });
+    res.status(201).json({ mensaje: "Producto creado", id: result.rows[0].id });
   } catch (err) {
-    console.error("Error en el INSERT:", err.message); // 🔍 debug útil
-    res.status(500).json({ error: 'Error en el servidor' });
+    console.error("Error al crear producto:", err);
+    res.status(500).json({ error: "Error en el servidor" });
   }
 };
-
 
 exports.obtenerProductos = async (req, res) => {
   try {
@@ -47,12 +66,11 @@ exports.obtenerProductos = async (req, res) => {
   }
 };
 
-
-
 exports.obtenerPorUsuario = async (req, res) => {
   const { id } = req.params;
   try {
-    const result = await pool.query(`
+    const result = await pool.query(
+      `
       SELECT 
         p.id, 
         p.nombre, 
@@ -67,7 +85,9 @@ exports.obtenerPorUsuario = async (req, res) => {
       FROM productos p
       JOIN usuarios u ON p.usuario_id = u.id
       WHERE p.usuario_id = $1
-    `, [id]);
+    `,
+      [id]
+    );
 
     res.status(200).json(result.rows);
   } catch (err) {
@@ -80,7 +100,8 @@ exports.obtenerProductoPorId = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const result = await pool.query(`
+    const result = await pool.query(
+      `
       SELECT 
         p.id, 
         p.nombre, 
@@ -95,7 +116,9 @@ exports.obtenerProductoPorId = async (req, res) => {
       FROM productos p
       JOIN usuarios u ON p.usuario_id = u.id
       WHERE p.id = $1
-    `, [id]);
+    `,
+      [id]
+    );
 
     if (result.rows.length === 0) {
       return res.status(404).json({ error: "Producto no encontrado" });
@@ -122,18 +145,23 @@ exports.eliminarProducto = async (req, res) => {
 exports.actualizarProducto = async (req, res) => {
   const { id } = req.params;
   const usuario_id = req.user.id; // viene del token gracias a verifyToken
-  const { nombre, descripcion, imagenes, precio, condicion, ubicacion } = req.body;
+  const { nombre, descripcion, imagenes, precio, condicion, ubicacion } =
+    req.body;
 
   try {
     // Verificamos si el producto existe y le pertenece al usuario
-    const producto = await pool.query("SELECT * FROM productos WHERE id = $1", [id]);
+    const producto = await pool.query("SELECT * FROM productos WHERE id = $1", [
+      id,
+    ]);
 
     if (producto.rows.length === 0) {
       return res.status(404).json({ error: "Producto no encontrado" });
     }
 
     if (producto.rows[0].usuario_id !== usuario_id) {
-      return res.status(403).json({ error: "No tienes permiso para editar este producto" });
+      return res
+        .status(403)
+        .json({ error: "No tienes permiso para editar este producto" });
     }
 
     // Actualizamos el producto

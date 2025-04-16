@@ -45,7 +45,7 @@ export default function HeroSection() {
       className="relative w-full min-h-dvh md:min-h-[600px] bg-no-repeat bg-top bg-cover mt-[-8rem]"
       style={{ backgroundImage: `url(${backgroundUrl})` }}
     >
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.2)_80%,rgba(246,241,222,1)_100%)]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.3)_80%,rgba(246,241,222,1)_100%)]"></div>
     </section>
   );
 }

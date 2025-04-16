@@ -2,20 +2,22 @@ import { useEffect, useState } from "react";
 import api from "@/config/axios";
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/Default";
-import {
-  UserCircle,
-  Mail,
-  MapPin,
-  Calendar,
-} from "lucide-react";
+import { UserCircle, Mail, MapPin, Calendar } from "lucide-react";
 import LogoutButton from "@/components/LogoutButton";
 import { Link } from "react-router-dom";
 import useAuthCheck from "@/hooks/useAuthCheck";
+import ConfirmDeleteModal from "@/components/ConfirmDeleteModal";
+import { useToast } from "@/hooks/useToast";
 
 export default function ProfilePage() {
   useAuthCheck();
   const [user, setUser] = useState<any>(null);
   const [misProductos, setMisProductos] = useState<Producto[]>([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [productoAEliminar, setProductoAEliminar] = useState<number | null>(
+    null
+  );
+  const { showToast } = useToast();
 
   type Producto = {
     id: number;
@@ -42,17 +44,42 @@ export default function ProfilePage() {
     fetchUser();
   }, []);
 
-  const handleEliminar = async (id: number) => {
-    const confirmar = confirm("¿Estás seguro de que quieres eliminar esta publicación?");
-    if (!confirmar) return;
+  const handleEliminarConfirmado = async () => {
+    if (!productoAEliminar) return;
 
     try {
-      await api.delete(`/productos/${id}`);
-      setMisProductos((prev) => prev.filter((prod) => prod.id !== id));
+      await api.delete(`/productos/${productoAEliminar}`);
+      setMisProductos((prev) =>
+        prev.filter((prod) => prod.id !== productoAEliminar)
+      );
+
+      showToast({
+        title: "Éxito",
+        description: "La publicación ha sido eliminada.",
+        color: "success",
+        variant: "flat",
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+      });
     } catch (error) {
       console.error("Error al eliminar producto:", error);
-      alert("Ocurrió un error al eliminar la publicación.");
+      showToast({
+        title: "Error",
+        description: "No se pudo eliminar la publicación.",
+        color: "danger",
+        variant: "flat",
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+      });
+    } finally {
+      setProductoAEliminar(null);
+      setModalOpen(false);
     }
+  };
+
+  const abrirModalEliminacion = (id: number) => {
+    setProductoAEliminar(id);
+    setModalOpen(true);
   };
 
   const getImagenPrincipal = (imagenes: any): string => {
@@ -136,12 +163,16 @@ export default function ProfilePage() {
                             alt={prod.nombre}
                             className="w-full h-40 object-cover rounded mb-2"
                           />
-                          <h4 className="font-bold text-[#3E3F5B]">{prod.nombre}</h4>
-                          <p className="text-sm text-[#8AB2A6]">${prod.precio}</p>
+                          <h4 className="font-bold text-[#3E3F5B]">
+                            {prod.nombre}
+                          </h4>
+                          <p className="text-sm text-[#8AB2A6]">
+                            ${prod.precio}
+                          </p>
                         </Link>
 
                         <button
-                          onClick={() => handleEliminar(prod.id)}
+                          onClick={() => abrirModalEliminacion(prod.id)}
                           className="mt-2 text-sm bg-red-500 text-white rounded px-4 py-2 hover:bg-red-600 transition"
                         >
                           Eliminar publicación
@@ -168,6 +199,11 @@ export default function ProfilePage() {
           </div>
         </div>
       </section>
+      <ConfirmDeleteModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        onConfirm={handleEliminarConfirmado}
+      />
     </DefaultLayout>
   );
 }

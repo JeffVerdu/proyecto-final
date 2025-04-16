@@ -19,9 +19,10 @@ import DropdownButton from "./DropdownButton";
 import { useEffect, useState } from "react";
 import { useSearchStore } from "@/store/useSearchStore";
 import { useCart } from "@/context/CartContext";
+import api from "@/config/axios";
 
 export const Navbar = () => {
-  const [options, setOptions] = useState([]);
+  const [options, setOptions] = useState<string[]>([]);
   const location = useLocation();
 
   const { items } = useCart();
@@ -29,19 +30,17 @@ export const Navbar = () => {
 
   useEffect(() => {
     fetch("/data/categories.json")
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
-        const categories = data.map(
-          (category: { id: number; title: string; img: string }) =>
-            category.title
-        );
+        const categories = data.map((cat: { title: string }) => cat.title);
         setOptions(categories);
       })
-      .catch((error) => console.error("Error fetching categories:", error));
+      .catch((err) => {
+        console.error("Error cargando categorías:", err);
+      });
   }, []);
 
-  const isNavbarTransparent =
-    location.pathname === "/" || location.pathname === "/category";
+  const isNavbarTransparent = location.pathname === "/";
 
   const isLoggedIn = !!localStorage.getItem("token");
 
@@ -76,11 +75,11 @@ export const Navbar = () => {
             color="foreground"
             href="/"
           >
-            <p className="font-bold text-inherit text-white">
+            <p className="font-base text-inherit text-white text-2xl">
               Fast
               <strong
                 className={`${
-                  isNavbarTransparent ? "text-[#3E3F5B]" : "text-white"
+                  isNavbarTransparent ? "text-[#3e3f5b]" : "text-white"
                 }`}
               >
                 MarketPlace
@@ -120,7 +119,7 @@ export const Navbar = () => {
             </Button>
           </Link>
           <LogoutButton />
-          <Link href="/carrito" className="relative">
+          <Link href="/cart" className="relative">
             <Button
               aria-label="Ver carrito"
               className="bg-white text-[#3E3F5B] font-semibold relative overflow-visible"
@@ -147,6 +146,19 @@ export const Navbar = () => {
           >
             Registrarse
           </Link>
+          <Link href="/cart" className="relative">
+            <Button
+              aria-label="Ver carrito"
+              className="bg-white text-[#3E3F5B] font-semibold relative overflow-visible"
+            >
+              🛒
+              {items.length > 0 && (
+                <span className="absolute top-0 right-0 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full translate-x-1/2 -translate-y-1/2">
+                  {items.length}
+                </span>
+              )}
+            </Button>
+          </Link>
         </NavbarContent>
       )}
 
@@ -164,8 +176,8 @@ export const Navbar = () => {
                   index === 2
                     ? "primary"
                     : index === siteConfig.navMenuItems.length - 1
-                    ? "danger"
-                    : "foreground"
+                      ? "danger"
+                      : "foreground"
                 }
                 href={item.href}
                 size="lg"

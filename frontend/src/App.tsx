@@ -15,6 +15,8 @@ import CategoryPage from "@/pages/CategoryPage";
 import EditarProductoPage from "@/pages/EditarProductoPage";
 import CartPage from "@/pages/CartPage";
 import ProtectedRoute from "@/config/ProtectedRoute";
+import OrderSuccess from "./pages/OrderSuccess";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
         element={<CategoryPage key={location.pathname} />}
         path="/categories/:category"
       />
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="/checkout" element={<OrderSuccess />} />
 
       {/* Protegidas */}
       <Route
@@ -51,7 +55,7 @@ function App() {
         }
       />
       <Route
-        path="/post"
+        path="/post/new"
         element={
           <ProtectedRoute>
             <CreatePostPage />
@@ -66,14 +70,8 @@ function App() {
           </ProtectedRoute>
         }
       />
-      <Route
-        path="/carrito"
-        element={
-          <ProtectedRoute>
-            <CartPage />
-          </ProtectedRoute>
-        }
-      />
+      {/* Ruta no encontrada */}
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }

@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import { Product } from "@/types";
 import { useCart } from "@/context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   product: Product;
 }
 
-
 const ProductDetails: React.FC<Props> = ({ product }) => {
   const thumbnails = Array.isArray(product.imagenes) ? product.imagenes : [];
   const [mainImage, setMainImage] = useState(thumbnails[0]);
   const { addToCart } = useCart();
+
+  const navigate = useNavigate();
+
+  const handleBuyNow = () => {
+    addToCart(product, 1);
+    navigate("/cart");
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-5 gap-6">
@@ -42,18 +49,24 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
       </div>
 
       {/* Card: Info del producto */}
-      <div className="md:col-span-2 bg-white rounded-lg shadow p-6 flex flex-col gap-4">
+      <div className="md:col-span-2 bg-white rounded-lg shadow p-6 flex flex-col gap-4 justify-between">
         <h1 className="text-2xl font-semibold leading-tight">
           {product.nombre}
+          <span className="text-base text-black">{product.categoria}</span>
         </h1>
 
         {product.nombre_usuario && (
-          <p className="text-sm text-gray-500">Publicado por <span className="font-medium">{product.nombre_usuario}</span></p>
+          <p className="text-sm text-gray-500">
+            Publicado por{" "}
+            <span className="font-medium">{product.nombre_usuario}</span>
+          </p>
         )}
 
         <div>
           <p className="text-3xl font-bold text-gray-900">
-            {product.precio !== undefined ? `$${product.precio.toLocaleString()}` : "Precio no disponible"}
+            {product.precio !== undefined
+              ? `$${product.precio.toLocaleString()}`
+              : "Precio no disponible"}
           </p>
         </div>
 
@@ -61,12 +74,14 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
           {product.descripcion}
         </p>
 
-        <button className="bg-[#8AB2A6] hover:brightness-95 text-white font-bold py-3 rounded-md transition shadow-sm">
+        <button
+          onClick={handleBuyNow}
+          className="bg-[#8AB2A6] hover:brightness-95 text-white font-bold py-3 rounded-md transition shadow-sm"
+        >
           Comprar ahora
         </button>
         <button
           onClick={() => {
-            console.log("Agregando al carrito:", product);
             addToCart(product, 1);
           }}
           className="bg-[#8AB2A6] hover:brightness-95 text-white font-bold py-3 rounded-md transition shadow-sm"

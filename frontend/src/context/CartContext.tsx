@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { Product } from "@/types";
 import api from "@/config/axios";
+import { useToast } from "@/hooks/useToast";
 
 interface CartItem {
   producto_id: number;
@@ -29,15 +30,19 @@ const CartContext = createContext<CartContextType>({
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [items, setItems] = useState<CartItem[]>([]);
   const [carritoId, setCarritoId] = useState<number | null>(null);
+  const { showToast } = useToast();
 
   useEffect(() => {
     const storedId = localStorage.getItem("carrito_id");
     if (storedId) {
       const id = Number(storedId);
       setCarritoId(id);
-      api.get(`/carrito/${id}`)
-        .then(res => {
-          const itemsBackend = Array.isArray(res.data?.items) ? res.data.items : [];
+      api
+        .get(`/carrito/${id}`)
+        .then((res) => {
+          const itemsBackend = Array.isArray(res.data?.items)
+            ? res.data.items
+            : [];
           const productos = itemsBackend.map((item: any) => ({
             producto_id: item.producto_id,
             cantidad: item.cantidad,
@@ -45,12 +50,15 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
               id: item.producto_id,
               nombre: item.nombre,
               precio: item.precio,
-              imagenes: typeof item.imagenes === "string" ? JSON.parse(item.imagenes) : item.imagenes || [],
+              imagenes:
+                typeof item.imagenes === "string"
+                  ? JSON.parse(item.imagenes)
+                  : item.imagenes || [],
             },
           }));
           setItems(productos);
         })
-        .catch(err => {
+        .catch((err) => {
           console.error("Error al obtener el carrito:", err);
           setItems([]);
         });
@@ -75,10 +83,10 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         cantidad,
       });
 
-      setItems(prev => {
-        const existe = prev.find(i => i.producto_id === producto.id);
+      setItems((prev) => {
+        const existe = prev.find((i) => i.producto_id === producto.id);
         if (existe) {
-          return prev.map(i =>
+          return prev.map((i) =>
             i.producto_id === producto.id
               ? { ...i, cantidad: i.cantidad + cantidad }
               : i
@@ -87,7 +95,14 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         return [...prev, { producto_id: producto.id, cantidad, producto }];
       });
 
-      console.log("✅ Item agregado al backend y al carrito local");
+      showToast({
+        title: "Producto agregado al carrito",
+        description: "",
+        color: "success",
+        variant: "flat",
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+      });
     } catch (err) {
       console.error("Error al agregar al carrito:", err);
     }
@@ -128,10 +143,22 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const totalItems = items.reduce((sum, item) => sum + item.cantidad, 0);
-  const totalPrice = items.reduce((sum, item) => sum + item.producto.precio * item.cantidad, 0);
+  const totalPrice = items.reduce(
+    (sum, item) => sum + item.producto.precio * item.cantidad,
+    0
+  );
 
   return (
-    <CartContext.Provider value={{ items, addToCart, removeFromCart, clearCart, totalItems, totalPrice }}>
+    <CartContext.Provider
+      value={{
+        items,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        totalItems,
+        totalPrice,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

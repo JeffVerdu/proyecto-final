@@ -7,10 +7,12 @@ import ProductCategoryCarousel from "@/components/ProductCategoryCarousel";
 import ProductCard from "@/components/ProductCard";
 import { useSearchStore } from "@/store/useSearchStore";
 import api from "@/config/axios";
+import { Spinner } from "@heroui/react";
 
 export default function Index() {
   const { term } = useSearchStore();
   const [products, setProducts] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -21,11 +23,32 @@ export default function Index() {
       .finally(() => setLoading(false));
   }, []);
 
+  useEffect(() => {
+    fetch("/data/categories.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const categories = data.map((cat: { id: string }) => cat.id);
+        setCategories(categories);
+      })
+      .catch((err) => {
+        console.error("Error cargando categorías:", err);
+      });
+  }, []);
+
   const filteredProducts = products.filter((p) =>
     p.nombre.toLowerCase().includes(term.toLowerCase())
   );
 
-  const categories = [...new Set(products.map((p) => p.categoria || "Sin categoría"))];
+  if (loading) {
+    return (
+      <DefaultLayout>
+        <HeroSection />
+        <div className="flex items-start justify-center h-screen">
+          <Spinner size="lg" variant="gradient" color="current" />
+        </div>
+      </DefaultLayout>
+    );
+  }
 
   return (
     <DefaultLayout>
@@ -51,22 +74,18 @@ export default function Index() {
       ) : (
         <div className="container mx-auto">
           <Featured />
-          {loading ? (
-            <p className="text-center mt-10">Cargando productos...</p>
-          ) : (
-            categories.map((categoria) => {
-              const productsInCategory = products.filter(
-                (p) => (p.categoria || "Sin categoría") === categoria
-              );
-              return (
-                <ProductCategoryCarousel
-                  key={categoria}
-                  category={categoria}
-                  products={productsInCategory}
-                />
-              );
-            })
-          )}
+          {categories.map((categoria) => {
+            const productsInCategory = products.filter(
+              (p) => (p.categoria || "Sin categoría") === categoria
+            );
+            return (
+              <ProductCategoryCarousel
+                key={categoria}
+                category={categoria}
+                products={productsInCategory}
+              />
+            );
+          })}
         </div>
       )}
     </DefaultLayout>
