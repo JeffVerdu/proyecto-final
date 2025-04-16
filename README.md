@@ -98,7 +98,7 @@ CLOUDINARY_API_SECRET=api_secret
 
 ```bash
 git clone https://github.com/JeffVerdu/proyecto-final.git
-cd fastmarketplace
+cd proyecto-final
 ```
 
 ### 2. Backend
@@ -106,7 +106,7 @@ cd fastmarketplace
 ```bash
 cd backend
 npm install
-npm run dev
+node server.js
 ```
 
 ### 3. Frontend
