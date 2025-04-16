@@ -80,13 +80,6 @@ FastMarketPlace es una plataforma web de compra y venta de productos desarrollad
 
 ## Variables de entorno 🌍
 
-`.env.local`
-
-```env
-VITE_FIREBASE_API_KEY=xxx
-VITE_FIREBASE_STORAGE_BUCKET=xxx
-```
-
 `.env` en backend
 
 ```env
