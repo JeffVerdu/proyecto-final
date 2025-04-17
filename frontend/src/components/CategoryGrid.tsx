@@ -14,7 +14,8 @@ const CategoryGrid = ({ category }: CategoryGridProps) => {
   useEffect(() => {
     setIsLoading(true);
 
-    api.get("/productos")
+    api
+      .get("/productos")
       .then((res) => {
         const filtered = res.data.filter(
           (p: Product) => p.categoria?.toLowerCase() === category?.toLowerCase()

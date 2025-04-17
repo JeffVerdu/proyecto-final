@@ -17,11 +17,6 @@ export default function CartPage() {
 
   if (!Array.isArray(items)) return null;
 
-  const handleClear = () => {
-    clearCart();
-    navigate("/");
-  };
-
   const onModalConfirm = () => {
     if (confirmAction === "pago") {
       const orderId = Math.floor(100000 + Math.random() * 900000);

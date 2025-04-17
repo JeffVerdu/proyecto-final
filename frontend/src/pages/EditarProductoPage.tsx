@@ -100,20 +100,20 @@ export default function EditarProductoPage() {
             placeholder="Precio"
             className="border p-2 rounded"
           />
-            <label className="text-sm font-medium text-gray-700">Condición</label>
-            <select
+          <label className="text-sm font-medium text-gray-700">Condición</label>
+          <select
             name="condicion"
             value={form.condicion}
             onChange={handleChange}
             className="border p-2 rounded focus:outline-none focus:ring-2 focus:ring-green-300"
-            >
+          >
             <option value="">Seleccionar condición</option>
             <option value="Nuevo">Nuevo</option>
             <option value="Como nuevo">Como nuevo</option>
             <option value="Buen estado">Buen estado</option>
             <option value="Estado aceptable">Estado aceptable</option>
             <option value="Necesita reparación">Necesita reparación</option>
-            </select>
+          </select>
           <input
             type="text"
             name="ubicacion"

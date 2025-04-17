@@ -16,7 +16,7 @@ const ProductSearchInline = ({ products, onSearching }: Props) => {
   useEffect(() => {
     const query = search.trim().toLowerCase();
     const results = products.filter((p) =>
-      p.title.toLowerCase().includes(query)
+      p.nombre.toLowerCase().includes(query)
     );
     setFiltered(results);
     onSearching(query.length > 0); // comunica si estamos buscando
