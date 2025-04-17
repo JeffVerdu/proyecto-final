@@ -6,6 +6,9 @@ import { useState } from "react";
 import { useToast } from "@/hooks/useToast";
 
 export default function CartPage() {
+  const [confirmAction, setConfirmAction] = useState<"pago" | "vaciar" | null>(
+    null
+  );
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const { items, removeFromCart, clearCart, totalItems, totalPrice } =
     useCart();
@@ -15,35 +18,47 @@ export default function CartPage() {
   if (!Array.isArray(items)) return null;
 
   const handleClear = () => {
-    if (confirm("¿Estás seguro de vaciar el carrito?")) {
-      clearCart();
-      navigate("/");
-    }
+    clearCart();
+    navigate("/");
   };
 
   const onModalConfirm = () => {
-    const orderId = Math.floor(100000 + Math.random() * 900000);
+    if (confirmAction === "pago") {
+      const orderId = Math.floor(100000 + Math.random() * 900000);
+      const order = {
+        id: orderId,
+        items,
+        total: totalPrice,
+        date: new Date().toISOString(),
+      };
+      localStorage.setItem("lastOrder", JSON.stringify(order));
+      clearCart();
+      navigate(`/checkout`);
+      showToast({
+        title: "Compra exitosa",
+        description: `Tu número de compra es ${orderId}`,
+        color: "success",
+        variant: "flat",
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+      });
+    }
 
-    const order = {
-      id: orderId,
-      items,
-      total: totalPrice,
-      date: new Date().toISOString(),
-    };
+    if (confirmAction === "vaciar") {
+      clearCart();
+      navigate("/");
+      showToast({
+        title: "Vaciaste el carrito",
+        description: `Todos los productos fueron eliminados.`,
+        color: "warning",
+        variant: "flat",
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+      });
+    }
 
-    localStorage.setItem("lastOrder", JSON.stringify(order));
-
-    clearCart();
-    navigate(`/checkout`);
-    showToast({
-      title: "Compra exitosa",
-      description: `Tu número de compra es ${orderId}`,
-      color: "success",
-      variant: "flat",
-      timeout: 3000,
-      shouldShowTimeoutProgress: true,
-    });
     setShowConfirmModal(false);
+    setConfirmAction(null);
   };
 
   return (
@@ -129,14 +144,20 @@ export default function CartPage() {
 
               <button
                 className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded mb-2"
-                onClick={() => setShowConfirmModal(true)}
+                onClick={() => {
+                  setConfirmAction("pago");
+                  setShowConfirmModal(true);
+                }}
               >
                 Pagar
               </button>
 
               <button
                 className="w-full bg-gray-700 hover:bg-gray-800 text-white py-2 rounded"
-                onClick={handleClear}
+                onClick={() => {
+                  setConfirmAction("vaciar");
+                  setShowConfirmModal(true);
+                }}
               >
                 Vaciar carrito
               </button>
@@ -146,10 +167,21 @@ export default function CartPage() {
       </div>
       <ConfirmModal
         isOpen={showConfirmModal}
-        onClose={() => setShowConfirmModal(false)}
+        onClose={() => {
+          setShowConfirmModal(false);
+          setConfirmAction(null);
+        }}
         onConfirm={onModalConfirm}
-        title="¿Deseas confirmar el pago?"
-        message="Una vez confirmada la compra, no podrás modificar el carrito."
+        title={
+          confirmAction === "pago"
+            ? "¿Deseas confirmar el pago?"
+            : "¿Deseas vaciar el carrito?"
+        }
+        message={
+          confirmAction === "pago"
+            ? "Una vez confirmada la compra, no podrás modificar el carrito."
+            : "Esta acción eliminará todos los productos del carrito."
+        }
       />
     </DefaultLayout>
   );

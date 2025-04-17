@@ -14,6 +14,8 @@ interface CartContextType {
   addToCart: (producto: Product, cantidad?: number) => void;
   removeFromCart: (producto_id: number) => void;
   clearCart: () => void;
+  syncCartFromLogin: (carrito_id: number, itemsFromBackend: any[]) => void;
+  resetAnonymousCart: () => void;
   totalItems: number;
   totalPrice: number;
 }
@@ -23,6 +25,8 @@ const CartContext = createContext<CartContextType>({
   addToCart: () => {},
   removeFromCart: () => {},
   clearCart: () => {},
+  syncCartFromLogin: () => {},
+  resetAnonymousCart: () => {},
   totalItems: 0,
   totalPrice: 0,
 });
@@ -32,8 +36,31 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [carritoId, setCarritoId] = useState<number | null>(null);
   const { showToast } = useToast();
 
+  function parseCarritoItems(itemsBackend: any[]): CartItem[] {
+    return itemsBackend.map((item: any) => ({
+      producto_id: item.producto_id,
+      cantidad: item.cantidad,
+      producto: {
+        id: item.producto_id,
+        nombre: item.nombre,
+        precio: item.precio,
+        imagenes:
+          typeof item.imagenes === "string"
+            ? JSON.parse(item.imagenes)
+            : item.imagenes || [],
+        descripcion: item.descripcion || "",
+        condicion: item.condicion || "nuevo",
+        ubicacion: item.ubicacion || "",
+        usuario_id: item.usuario_id || 0,
+        categoria: item.categoria || "",
+      },
+    }));
+  }
+
   useEffect(() => {
-    const storedId = localStorage.getItem("carrito_id");
+    const storedId = sessionStorage.getItem("carrito_id");
+    const token = localStorage.getItem("token");
+
     if (storedId) {
       const id = Number(storedId);
       setCarritoId(id);
@@ -43,26 +70,64 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
           const itemsBackend = Array.isArray(res.data?.items)
             ? res.data.items
             : [];
-          const productos = itemsBackend.map((item: any) => ({
-            producto_id: item.producto_id,
-            cantidad: item.cantidad,
-            producto: {
-              id: item.producto_id,
-              nombre: item.nombre,
-              precio: item.precio,
-              imagenes:
-                typeof item.imagenes === "string"
-                  ? JSON.parse(item.imagenes)
-                  : item.imagenes || [],
-            },
-          }));
+          const productos = parseCarritoItems(itemsBackend);
           setItems(productos);
         })
         .catch((err) => {
           console.error("Error al obtener el carrito:", err);
           setItems([]);
         });
+    } else if (token) {
+      api
+        .get("/auth/me", {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => {
+          const usuario_id = res.data.id;
+          return api.get(`/carrito/usuario/${usuario_id}`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+        })
+        .then((res) => {
+          const carrito_id = res.data.carrito_id;
+          const itemsBackend = Array.isArray(res.data?.items)
+            ? res.data.items
+            : [];
+          const productos = parseCarritoItems(itemsBackend);
+
+          sessionStorage.setItem("carrito_id", carrito_id.toString());
+          setCarritoId(carrito_id);
+          setItems(productos);
+        })
+        .catch((err) => {
+          console.error("No se encontró carrito del usuario logueado:", err);
+        });
     }
+  }, []);
+
+  useEffect(() => {
+    const handleBeforeUnload = async () => {
+      const token = localStorage.getItem("token");
+      const carrito_id = sessionStorage.getItem("carrito_id");
+
+      if (token && carrito_id) {
+        try {
+          const me = await api.get("/auth/me", {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+
+          await api.put("/carrito/asociar", {
+            carrito_id,
+            usuario_id: me.data.id,
+          });
+        } catch (err) {
+          console.error("Error al asociar carrito antes de salir:", err);
+        }
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
   }, []);
 
   const addToCart = async (producto: Product, cantidad = 1) => {
@@ -73,7 +138,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         id = res.data.carrito_id;
         setCarritoId(id);
         if (id !== null) {
-          localStorage.setItem("carrito_id", id.toString());
+          sessionStorage.setItem("carrito_id", id.toString());
         }
       }
 
@@ -142,6 +207,40 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
+  const syncCartFromLogin = (carrito_id: number, itemsFromBackend: any[]) => {
+    setCarritoId(carrito_id);
+    sessionStorage.setItem("carrito_id", carrito_id.toString());
+
+    console.log(itemsFromBackend);
+
+    const itemsParsed = itemsFromBackend.map((item: any) => ({
+      producto_id: item.producto_id,
+      cantidad: item.cantidad,
+      producto: {
+        id: item.producto_id,
+        nombre: item.nombre,
+        precio: item.precio,
+        imagenes:
+          typeof item.imagenes === "string"
+            ? JSON.parse(item.imagenes)
+            : item.imagenes || [],
+        descripcion: item.descripcion || "",
+        condicion: item.condicion || "nuevo",
+        ubicacion: item.ubicacion || "",
+        usuario_id: item.usuario_id || 0,
+        categoria: item.categoria || "",
+      },
+    }));
+
+    setItems(itemsParsed);
+  };
+
+  const resetAnonymousCart = () => {
+    sessionStorage.removeItem("carrito_id");
+    setCarritoId(null);
+    setItems([]);
+  };
+
   const totalItems = items.reduce((sum, item) => sum + item.cantidad, 0);
   const totalPrice = items.reduce(
     (sum, item) => sum + item.producto.precio * item.cantidad,
@@ -155,6 +254,8 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         addToCart,
         removeFromCart,
         clearCart,
+        syncCartFromLogin,
+        resetAnonymousCart,
         totalItems,
         totalPrice,
       }}

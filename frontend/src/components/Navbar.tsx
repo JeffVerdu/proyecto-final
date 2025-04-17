@@ -132,30 +132,28 @@ export const Navbar = () => {
         </NavbarContent>
       ) : (
         <NavbarContent className="hidden sm:flex gap-4" justify="end">
-          <Link href="/login">
-            <Button className="bg-white text-[#3E3F5B] font-semibold">
-              Iniciar Sesión
-            </Button>
-          </Link>
+          <Button className="bg-white text-[#3E3F5B] font-semibold">
+            <Link href="/login">Iniciar Sesión</Link>
+          </Button>
           <Link
             href="/register"
             className="cursor-pointer text-white font-semibold"
           >
             Registrarse
           </Link>
-          <Link href="/cart" className="relative">
-            <Button
-              aria-label="Ver carrito"
-              className="bg-white text-[#3E3F5B] font-semibold relative overflow-visible"
-            >
+          <Button
+            aria-label="Ver carrito"
+            className="bg-white text-[#3E3F5B] font-semibold relative overflow-visible"
+          >
+            <Link href="/cart">
               🛒
               {items.length > 0 && (
                 <span className="absolute top-0 right-0 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full translate-x-1/2 -translate-y-1/2">
                   {items.length}
                 </span>
               )}
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </NavbarContent>
       )}
 

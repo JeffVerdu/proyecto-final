@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@heroui/button";
-import api from "@/config/axios"; // tu cliente Axios
+import api from "@/config/axios";
 import { useToast } from "@/hooks/useToast";
+import { useCart } from "@/context/CartContext";
 
 export default function LogoutButton() {
   const { showToast } = useToast();
+  const { resetAnonymousCart } = useCart();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -27,7 +29,7 @@ export default function LogoutButton() {
         );
 
         localStorage.removeItem("token");
-        sessionStorage.clear();
+        resetAnonymousCart();
         caches.keys().then((keys) => keys.forEach((k) => caches.delete(k)));
 
         navigate("/");

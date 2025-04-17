@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Product } from "@/types";
 import { useCart } from "@/context/CartContext";
 import { useNavigate } from "react-router-dom";
@@ -8,11 +8,30 @@ interface Props {
 }
 
 const ProductDetails: React.FC<Props> = ({ product }) => {
+  const [category, setCategory] = useState("");
   const thumbnails = Array.isArray(product.imagenes) ? product.imagenes : [];
   const [mainImage, setMainImage] = useState(thumbnails[0]);
   const { addToCart } = useCart();
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("/data/categories.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const categoryName = data.find(
+          (cat: { id: string }) => cat.id === product.categoria
+        )?.title;
+        if (categoryName) {
+          setCategory(categoryName);
+        } else {
+          setCategory("Sin categoría");
+        }
+      })
+      .catch((err) => {
+        console.error("Error cargando categorías:", err);
+      });
+  }, [product]);
 
   const handleBuyNow = () => {
     addToCart(product, 1);
@@ -50,10 +69,14 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
 
       {/* Card: Info del producto */}
       <div className="md:col-span-2 bg-white rounded-lg shadow p-6 flex flex-col gap-4 justify-between">
-        <h1 className="text-2xl font-semibold leading-tight">
-          {product.nombre}
-          <span className="text-base text-black">{product.categoria}</span>
-        </h1>
+        <div>
+          <h1 className="text-2xl font-semibold leading-none m-0 p-0">
+            {product.nombre}
+          </h1>
+          <span className="text-xs m-0 p-0 leading-none text-gray-500">
+            {category}
+          </span>
+        </div>
 
         {product.nombre_usuario && (
           <p className="text-sm text-gray-500">

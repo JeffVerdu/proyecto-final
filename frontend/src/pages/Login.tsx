@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "@/config/axios";
 import { useToast } from "@/hooks/useToast";
+import { useCart } from "@/context/CartContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -13,8 +14,8 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-
   const { showToast } = useToast();
+  const { syncCartFromLogin } = useCart();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,21 +32,36 @@ export default function Login() {
 
       localStorage.setItem("token", token);
 
-      const carrito_id = localStorage.getItem("carrito_id");
-      if (carrito_id) {
-        try {
-          const userInfo = await api.get("/auth/me");
-          const usuario_id = userInfo.data.id;
+      try {
+        const userInfo = await api.get("/auth/me", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const usuario_id = userInfo.data.id;
 
-          await api.put("/carrito/asociar", {
-            carrito_id,
-            usuario_id,
-          });
-
-          console.log("🛒 Carrito anónimo asociado al usuario logueado");
-        } catch (error) {
-          console.error("❌ Error asociando carrito:", error);
+        const carrito_id_session = sessionStorage.getItem("carrito_id");
+        if (carrito_id_session) {
+          await api.put(
+            "/carrito/asociar",
+            {
+              carrito_id: carrito_id_session,
+              usuario_id,
+            },
+            {
+              headers: { Authorization: `Bearer ${token}` },
+            }
+          );
         }
+
+        const carritoRes = await api.get(`/carrito/usuario/${usuario_id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
+        const { carrito_id, items } = carritoRes.data;
+
+        sessionStorage.setItem("carrito_id", carrito_id.toString());
+        syncCartFromLogin(carrito_id, items);
+      } catch (error) {
+        console.error("❌ Error sincronizando carrito tras login:", error);
       }
 
       showToast({
@@ -56,10 +72,12 @@ export default function Login() {
         timeout: 3000,
         shouldShowTimeoutProgress: true,
       });
+
       navigate("/profile");
     } catch (error: any) {
       console.error("Error al iniciar sesión:", error);
       localStorage.removeItem("token");
+
       showToast({
         title: "Error en el inicio de sesión",
         description: "Usuario y/o contraseña incorrectos",
